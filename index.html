@@ -1,0 +1,28 @@
+<!DOCTYPE HTML>
+<head>
+    <title>Which beatle?</title>
+    <script type="text/javascript" src="scripts/jquery-3.4.1.slim.min.js"></script>
+    <script type="text/javascript" src="scripts/discography.js"></script>
+    <script type="text/javascript" src="scripts/whichbeatle.js"></script>		
+    <link rel="stylesheet" href="styles/whichbeatle.css">
+</head>
+<body>
+    <h1>Which Beatle?</h1>
+    <div class="queries">
+        <input type="text" id="song-name" placeholder="Type song name here"/>
+        <div class="option">
+            <input type="checkbox" name="Composer">
+            <span>Find the composer of this song</span>
+        </div>
+        <div class="option">
+            <input type="checkbox" name="Singer">
+            <span>Find the singer of this song</span>
+        </div>
+        <div class="option">
+            <input type="checkbox" name="Album">
+            <span>Find albums this song appeared on</span>
+        </div>
+        <input type="button" id="go" value="Go"/>
+    </div>
+    <div class="results"></div>
+</body>
