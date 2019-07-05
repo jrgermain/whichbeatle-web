@@ -1,7 +1,13 @@
 "use strict";
 
-// Once the page has loaded, set up go button event handling
+// Once the page has loaded:
 $(document).ready(function() {
+    // Reset page elements
+    $(".results").hide();
+    $("#song-name").val("");
+    $(":checkbox").prop("checked", false);
+
+    // Set up event handling for Go button
     $("#go").click(function() {
         const checkBoxes = $(".option input:checked").toArray();
         const songName = $("#song-name").val();
@@ -76,4 +82,5 @@ function buildTable(headers, content) {
 
     // Add our new table
     $(".results").append(table);
+    $(".results").show();
 }
