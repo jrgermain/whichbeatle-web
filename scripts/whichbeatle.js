@@ -84,14 +84,22 @@ function buildTable(headers, content) {
     }
     table += "</tbody></table>";
 
-    // If there is already a table present, remove it
+    /* If there are already results in the results section, shrink them, replace them, and then 
+     * grow back to regular size. If not, just add results and grow.
+     */
     const oldTable = $(".results table");
     if (oldTable.length) {
-        oldTable.remove();
+        // Shrink existing results (to default 0.2x scale)
+        $(".results").css("transform", "");
+        
+        // After shrink animation has finished:
+        setTimeout(function() {
+            oldTable.replaceWith(table);
+            $(".results").css("transform", "scale(1)"); // Grow back to 1x scale
+        }, 250);
+    } else {
+        $(".results").append(table);
+        $(".results").show();
+        $(".results").css("transform", "scale(1)"); // Grow to 1x scale
     }
-
-    // Add our new table
-    $(".results").append(table);
-    $(".results").show();
-    $(".results").css("transform", "scale(1)");
 }

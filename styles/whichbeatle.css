@@ -28,7 +28,7 @@ h1 {
 
 .results {
     transition: all 0.2s;
-    transform: scale(0.5);
+    transform: scale(0.2);
 }
 
 #song-name {
