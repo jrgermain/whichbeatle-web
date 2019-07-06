@@ -83,4 +83,5 @@ function buildTable(headers, content) {
     // Add our new table
     $(".results").append(table);
     $(".results").show();
+    $(".results").css("transform", "scale(1)");
 }

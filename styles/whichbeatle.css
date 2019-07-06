@@ -24,7 +24,11 @@ h1 {
 
 .queries {
     padding: 10px;
+}
 
+.results {
+    transition: all 0.2s;
+    transform: scale(0.5);
 }
 
 #song-name {
