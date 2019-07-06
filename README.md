@@ -1,9 +1,9 @@
 # whichbeatle-web
-## My whichbeatle program, ported to web technologies
+## My whichbeatle program, ported to html/css/js
 
-*If you haven't checked it out yet, I'd recommend going over to [jgermain/whichbeatle](https://github.com/jrgermain/whichbeatle) for some context.*
+*If you haven't checked it out yet, I'd recommend going over to [jrgermain/whichbeatle](https://github.com/jrgermain/whichbeatle) for some context.*
 
-This program will find the writer, singer, and/or album appearances of any Beatles song. Originally, I made a command-line Java program, but I figured a website would be more user-friendly. So now I'm bringing whichbeatle to the masses!
+This webpage will find the writer, singer, and/or album appearances of any Beatles song. Originally, I made a command-line Java program, but I figured a website would be more user-friendly. So now I'm bringing whichbeatle to the masses!
 
 ## The making of whichbeatle-web
 
