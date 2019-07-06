@@ -35,7 +35,7 @@ h1 {
     width: -moz-available;
     width: -webkit-fill-available;
     width: available;
-    padding: 4px;
+    padding: 4px 0;
 }
 
 table {
@@ -45,6 +45,7 @@ table {
 th, td {
     padding: 8px 10px;
     min-width: 8em;
+    text-align: left;
 }
 
 tbody tr:nth-child(odd) {
