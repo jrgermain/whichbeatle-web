@@ -67,6 +67,12 @@ function alike(word1, word2) {
 }
 
 function buildTable(headers, content) {
+    // If no results were found, exit
+    if (!content.length) {
+        alert("No results found");
+        return;
+    }
+    
     // Build table header
     let table = "<table><thead><tr>";
     for (const header of headers) {
