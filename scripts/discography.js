@@ -1229,5 +1229,11 @@ var discography = [
   "Composer": "Lennon",
   "Singer": "Lennon/McCartney/Starr",
   "Album": ""
+},
+{
+  "Song": "I Want to Hold Your Hand",
+  "Composer": "Lennon/McCartney",
+  "Singer": "Lennon/McCartney",
+  "Album": ""
 }
 ]
