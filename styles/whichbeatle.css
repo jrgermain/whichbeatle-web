@@ -35,7 +35,11 @@ h1 {
     width: -moz-available;
     width: -webkit-fill-available;
     width: available;
-    padding: 4px 0;
+    padding: 5px;
+    border-radius: inherit;
+    border: 1px solid #ccc;
+    outline: none;
+    font-size: 16px;
 }
 
 table {
