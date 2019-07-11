@@ -6,9 +6,15 @@ body {
     flex-wrap: wrap;
 }
 
-h1 {
-    flex-basis: 100%;
+#logo {
     margin-left: 10px;
+    width: 190px;
+}
+
+hr {
+    margin: 0;
+    width: 100%;
+    visibility: hidden;
 }
 
 .option {
