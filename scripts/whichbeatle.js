@@ -61,8 +61,8 @@ function search(checkBoxes, songName) {
 
 // Return true if word2 is equal to or contains word1, not counting case, punctuation, or spacing
 function alike(word1, word2) {
-    let w1 = word1.toLowerCase().replace(/[^a-z0-9\s]/g,"");
-    let w2 = word2.toLowerCase().replace(/[^a-z0-9\s]/g,"");
+    let w1 = " " + word1.toLowerCase().replace(/[^a-z0-9\s]/g,"") + " ";
+    let w2 = " " + word2.toLowerCase().replace(/[^a-z0-9\s]/g,"") + " ";
     return (w2.includes(w1));
 }
 
