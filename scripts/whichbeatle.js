@@ -8,9 +8,7 @@ $(document).ready(function() {
     $(":checkbox").prop("checked", false);
 
     // Set up event handling for Go button
-    $("#go").click(function() {
-        submit();
-    })
+    $("#go").click(submit);
 
     // Set up event handling for pressing enter in search field
     $('#song-name').on("keydown", function(event) {
