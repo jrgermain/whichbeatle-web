@@ -1,7 +1,7 @@
 "use strict";
 
 // Once the page has loaded:
-$(document).ready(function() {
+$(document).ready(function () {
     // Reset page elements
     $(".results").hide();
     $("#song-name").val("");
@@ -11,7 +11,7 @@ $(document).ready(function() {
     $("#go").click(submit);
 
     // Set up event handling for pressing enter in search field
-    $("#song-name").on("keydown", function(event) {
+    $("#song-name").on("keydown", function (event) {
         if (event.key === "Enter") submit();
     });
 
@@ -53,13 +53,13 @@ function search(checkBoxes, songName) {
         results.push(result);
     }
     // Generate results table and add to page
-    buildTable(queries,results);
+    buildTable(queries, results);
 }
 
 // Return true if word2 is equal to or contains word1, not counting case, punctuation, or spacing
 function alike(word1, word2) {
-    let w1 = " " + word1.toLowerCase().replace(/[^a-z0-9\s]/g,"") + " ";
-    let w2 = " " + word2.toLowerCase().replace(/[^a-z0-9\s]/g,"") + " ";
+    let w1 = " " + word1.toLowerCase().replace(/[^a-z0-9\s]/g, "") + " ";
+    let w2 = " " + word2.toLowerCase().replace(/[^a-z0-9\s]/g, "") + " ";
     return (w2.includes(w1));
 }
 
@@ -69,14 +69,14 @@ function buildTable(headers, content) {
         alert("No results found");
         return;
     }
-    
+
     // Build table header
     let table = "<table><thead><tr>";
     for (const header of headers) {
         table += `<th>${header}</th>`;
     }
     table += "</tr></thead><tbody>";
-    
+
     // Build table content
     for (const item of content) {
         table += "<tr>";
@@ -94,9 +94,9 @@ function buildTable(headers, content) {
     if (oldTable.length) {
         // Shrink existing results (to default 0.2x scale)
         $(".results").css("transform", "");
-        
+
         // After shrink animation has finished:
-        setTimeout(function() {
+        setTimeout(function () {
             oldTable.replaceWith(table);
             $(".results").css("transform", "scale(1)"); // Grow back to 1x scale
         }, 250);
