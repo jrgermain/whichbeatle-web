@@ -11,7 +11,7 @@ $(document).ready(function() {
     $("#go").click(submit);
 
     // Set up event handling for pressing enter in search field
-    $('#song-name').on("keydown", function(event) {
+    $("#song-name").on("keydown", function(event) {
         if (event.key === "Enter") submit();
     });
 
@@ -22,15 +22,14 @@ function submit() {
     const songName = $("#song-name").val();
 
     // Validate input before performing search
-    if (checkBoxes.length && songName) {
-        search(checkBoxes, songName);
+    if (!songName && !checkBoxes.length) {
+        alert("Please type a song name and select which fields to display");
+    } else if (!songName) {
+        alert("Please type a song name");
+    } else if (!checkBoxes.length) {
+        alert("Please use the checkboxes to select which fields to display");
     } else {
-        if (!checkBoxes.length) {
-            alert("Please select at least one checkbox");
-        }
-        if (!songName) {
-            alert("Please type a song name");
-        }
+        search(checkBoxes, songName);
     }
 }
 
