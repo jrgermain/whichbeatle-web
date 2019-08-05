@@ -17,6 +17,7 @@ $(document).ready(function () {
 
 });
 
+// Submit the search after checking that it is valid
 function submit() {
     const checkBoxes = $(".option input:checked").toArray();
     const songName = $("#song-name").val();
@@ -33,7 +34,7 @@ function submit() {
     }
 }
 
-// Perform a search
+// Perform a search, then call buildTable() with our results
 function search(checkBoxes, songName) {
     // Get an array of search terms
     const queries = checkBoxes.map(box => box.name);
@@ -63,6 +64,7 @@ function alike(word1, word2) {
     return (w2.includes(w1));
 }
 
+// Build an html table with our results, and then add it to the page
 function buildTable(headers, content) {
     // If no results were found, exit
     if (!content.length) {
