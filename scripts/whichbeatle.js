@@ -1,43 +1,52 @@
 "use strict";
 
-// Once the page has loaded:
-$(document).ready(function () {
-    // Reset page elements
-    $(".results").hide();
-    $("#song-name").val("");
-    $(":checkbox").prop("checked", false);
+const queryCheckboxes = ["composer", "singer", "album"];
 
-    // Set up event handling for Go button
-    $("#go").click(submit);
+// Clear song input field
+document.getElementById("song-name").value = "";
 
-    // Set up event handling for pressing enter in search field
-    $("#song-name").on("keydown", function (event) {
-        if (event.key === "Enter") submit();
-    });
+// Uncheck checkboxes
+queryCheckboxes.forEach(checkbox => {
+    document.getElementById(checkbox).checked = false;
+});
 
+// Set up event handling for Go button
+document.getElementById("go").addEventListener("click", submit);
+
+// Set up event handling for pressing enter in search field
+document.getElementById("song-name").addEventListener("keypress", function (event) {
+    if (event.key === "Enter") submit();
 });
 
 // Submit the search after checking that it is valid
 function submit() {
-    const checkBoxes = $(".option input:checked").toArray();
-    const songName = $("#song-name").val();
+    // Make an array holding a list of selected search queries
+    const queries = [];
+    queryCheckboxes.forEach(checkbox => {
+        if (document.getElementById(checkbox).checked) {
+            queries.push(document.getElementById(checkbox));
+        }
+    });
+    
+    // Get the name of the song we're searching for
+    const songName = document.getElementById("song-name").value;
 
     // Validate input before performing search
-    if (!songName && !checkBoxes.length) {
+    if (!songName && !queries.length) {
         alert("Please type a song name and select which fields to display");
     } else if (!songName) {
         alert("Please type a song name");
-    } else if (!checkBoxes.length) {
+    } else if (!queries.length) {
         alert("Please use the checkboxes to select which fields to display");
     } else {
-        search(checkBoxes, songName);
+        search(queries, songName);
     }
 }
 
 // Perform a search, then call buildTable() with our results
-function search(checkBoxes, songName) {
+function search(checkboxes, songName) {
     // Get an array of search terms
-    const queries = checkBoxes.map(box => box.name);
+    const queries = checkboxes.map(box => box.name);
     queries.unshift("Song"); // Add song to beginning of search criteria
 
     // Get an array of songs that match our search
@@ -72,39 +81,42 @@ function buildTable(headers, content) {
         return;
     }
 
+    const table = document.createElement("table");
+
     // Build table header
-    let table = "<table><thead><tr>";
+    let innerHTML = "<thead><tr>";
     for (const header of headers) {
-        table += `<th>${header}</th>`;
+        innerHTML += `<th>${header}</th>`;
     }
-    table += "</tr></thead><tbody>";
+    innerHTML += "</tr></thead><tbody>";
 
     // Build table content
     for (const item of content) {
-        table += "<tr>";
+        innerHTML += "<tr>";
         for (const i in item) {
-            table += `<td>${item[i]}</td>`;
+            innerHTML += `<td>${item[i]}</td>`;
         }
-        table += "</tr>";
+        innerHTML += "</tr>";
     }
-    table += "</tbody></table>";
+    innerHTML += "</tbody>";
+
+    table.innerHTML = innerHTML;
 
     /* If there are already results in the results section, shrink them, replace them, and then 
      * grow back to regular size. If not, just add results and grow.
      */
-    const oldTable = $(".results table");
-    if (oldTable.length) {
+    const oldTable = document.querySelector(".results table");
+    if (oldTable) {
         // Shrink existing results (to default 0.2x scale)
-        $(".results").css("transform", "");
+        document.querySelector(".results").style.removeProperty("transform");
 
         // After shrink animation has finished:
         setTimeout(function () {
             oldTable.replaceWith(table);
-            $(".results").css("transform", "scale(1)"); // Grow back to 1x scale
+            document.querySelector(".results").style.transform = "scale(1)";
         }, 250);
     } else {
-        $(".results").append(table);
-        $(".results").show();
-        $(".results").css("transform", "scale(1)"); // Grow to 1x scale
+        document.querySelector(".results").appendChild(table);
+        document.querySelector(".results").style.transform = "scale(1)";
     }
 }
