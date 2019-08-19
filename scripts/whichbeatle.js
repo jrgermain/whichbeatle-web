@@ -1,52 +1,51 @@
 "use strict";
 
-const queryCheckboxes = ["composer", "singer", "album"];
+// Save references to HTML elements we will access later
+const queryCheckboxes = Array.from(document.querySelectorAll("#composer,#singer,#album"));
+const inputs = Array.from(document.getElementsByTagName("input"));
+const songName = document.getElementById("song-name");
+const goButton = document.getElementById("go");
+const resultsDiv = document.querySelector("div.results");
 
 // Clear song input field
-document.getElementById("song-name").value = "";
+songName.value = "";
 
 // Uncheck checkboxes
 queryCheckboxes.forEach(checkbox => {
-    document.getElementById(checkbox).checked = false;
+    checkbox.checked = false;
 });
 
-// Set up event handling for Go button
-document.getElementById("go").addEventListener("click", submit);
+// Submit when Go button is clicked
+goButton.addEventListener("click", submit);
 
-// Set up event handling for pressing enter in search field
-document.getElementById("song-name").addEventListener("keypress", function (event) {
-    if (event.key === "Enter") submit();
+// Submit when enter is pressed inside an input
+inputs.forEach(input => {
+    input.addEventListener("keypress", function (event) {
+        if (event.key === "Enter") submit();
+    });
 });
 
 // Submit the search after checking that it is valid
 function submit() {
     // Make an array holding a list of selected search queries
-    const queries = [];
-    queryCheckboxes.forEach(checkbox => {
-        if (document.getElementById(checkbox).checked) {
-            queries.push(document.getElementById(checkbox));
-        }
-    });
-    
-    // Get the name of the song we're searching for
-    const songName = document.getElementById("song-name").value;
+    const queries = queryCheckboxes.filter(checkbox => checkbox.checked);
 
     // Validate input before performing search
-    if (!songName && !queries.length) {
+    if (!songName.value && !queries.length) { 
         alert("Please type a song name and select which fields to display");
-    } else if (!songName) {
+    } else if (!songName.value) {
         alert("Please type a song name");
     } else if (!queries.length) {
         alert("Please use the checkboxes to select which fields to display");
     } else {
-        search(queries, songName);
+        search(queries, songName.value);
     }
 }
 
 // Perform a search, then call buildTable() with our results
 function search(checkboxes, songName) {
     // Get an array of search terms
-    const queries = checkboxes.map(box => box.name);
+    const queries = checkboxes.map(checkbox => checkbox.name);
     queries.unshift("Song"); // Add song to beginning of search criteria
 
     // Get an array of songs that match our search
@@ -62,6 +61,7 @@ function search(checkboxes, songName) {
         }
         results.push(result);
     }
+
     // Generate results table and add to page
     buildTable(queries, results);
 }
@@ -81,6 +81,7 @@ function buildTable(headers, content) {
         return;
     }
 
+    // Create an element that will hold our results table
     const table = document.createElement("table");
 
     // Build table header
@@ -108,15 +109,15 @@ function buildTable(headers, content) {
     const oldTable = document.querySelector(".results table");
     if (oldTable) {
         // Shrink existing results (to default 0.2x scale)
-        document.querySelector(".results").style.removeProperty("transform");
+        resultsDiv.style.removeProperty("transform");
 
         // After shrink animation has finished:
         setTimeout(function () {
             oldTable.replaceWith(table);
-            document.querySelector(".results").style.transform = "scale(1)";
+            resultsDiv.style.transform = "scale(1)";
         }, 250);
     } else {
-        document.querySelector(".results").appendChild(table);
-        document.querySelector(".results").style.transform = "scale(1)";
+        resultsDiv.appendChild(table);
+        resultsDiv.style.transform = "scale(1)";
     }
 }
