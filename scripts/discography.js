@@ -1,5 +1,5 @@
-// An array containing the Beatles' songs, with relevant data
-var discography = [
+// An array containing the Beatles' songs with their composer, singer, and album
+const discography = [
 {
   "Song": "I Saw Her Standing There",
   "Composer": "McCartney",
