@@ -66,10 +66,10 @@ function search(checkboxes, songName) {
     buildTable(queries, results);
 }
 
-// Return true if word2 is equal to or contains word1, not counting case, punctuation, or spacing
+// Return true if word2 is equal to or contains word1, not counting case, punctuation, or leading/trailing spaces
 function alike(word1, word2) {
-    const w1 = " " + word1.toLowerCase().replace(/[^a-z0-9\s]/g, "") + " ";
-    const w2 = " " + word2.toLowerCase().replace(/[^a-z0-9\s]/g, "") + " ";
+    const w1 = " " + word1.toLowerCase().replace(/[^a-z0-9\s]/g, "").trim() + " ";
+    const w2 = " " + word2.toLowerCase().replace(/[^a-z0-9\s]/g, "").trim() + " ";
     return (w2.includes(w1));
 }
 
