@@ -4,6 +4,7 @@
 const queryCheckboxes = Array.from(document.querySelectorAll("#composer,#singer,#album"));
 const inputs = Array.from(document.getElementsByTagName("input"));
 const songName = document.getElementById("song-name");
+const random = document.getElementById("random");
 const goButton = document.getElementById("go");
 const resultsDiv = document.querySelector("div.results");
 
@@ -15,6 +16,9 @@ queryCheckboxes.forEach(checkbox => {
     checkbox.checked = false;
 });
 
+// When Random button is clicked, call the getRandomSong function
+random.addEventListener("click", getRandomSong);
+
 // Submit when Go button is clicked
 goButton.addEventListener("click", submit);
 
@@ -24,6 +28,14 @@ inputs.forEach(input => {
         if (event.key === "Enter") submit();
     });
 });
+
+// This function gets a random song name and fills it in the song name field
+function getRandomSong() {
+    // Get a random number between 0 and discography.length-1
+    const index = Math.floor(Math.random() * discography.length);
+    const name = discography[index].Song;
+    songName.value = name;
+}
 
 // Submit the search after checking that it is valid
 function submit() {

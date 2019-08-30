@@ -38,15 +38,28 @@ hr {
     transform: scale(0.2);
 }
 
+#song-name-container {
+    border-radius: inherit;
+    position: relative;
+}
+
 #song-name {
     width: -moz-available;
     width: -webkit-fill-available;
     width: available;
     padding: 5px;
+    padding-right: 32px;
     border-radius: inherit;
     border: 1px solid #ccc;
     outline: none;
     font-size: 16px;
+}
+
+#random {
+    height: 20px;
+    position: absolute;
+    top: 5px;
+    right: 7px;
 }
 
 #go {
