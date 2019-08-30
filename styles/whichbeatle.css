@@ -26,6 +26,8 @@ hr {
     background-color: #ddd;
     margin: 10px;
     border-radius: 8px;
+    max-width: calc(100% - 18px);
+    overflow: scroll;
 }
 
 .queries {
@@ -65,4 +67,11 @@ th, td {
 
 tbody tr:nth-child(odd) {
     background-color: rgba(255, 255, 255, 0.25);
+}
+
+/* Decrease cell padding for small screens */
+@media only screen and (max-width: 600px) {
+    th, td {
+        min-width: 6em;
+    }
 }
