@@ -56,10 +56,10 @@ hr {
 }
 
 #random {
-    height: 20px;
     position: absolute;
-    top: 5px;
+    top: calc(50% - 10px);
     right: 7px;
+    height: 20px;
 }
 
 #go {
