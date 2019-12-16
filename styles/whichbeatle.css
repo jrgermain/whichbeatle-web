@@ -21,28 +21,19 @@ header {
 }
 
 #logo {
-    width: 150px;
-}
-
-hr {
-    margin: 0;
-    width: 100%;
-    visibility: hidden;
+    height: 75px;
+    width: auto;
 }
 
 .option {
     margin: 10px 0;
 }
 
-.queries,
-.results {
+.section {
     background-color: #ddd;
     margin: 10px;
     border-radius: 8px;
     max-width: calc(100% - 18px);
-    /* -webkit-box-shadow: 0px 0px 21px 0px rgba(0,0,0,0.2);
-    -moz-box-shadow: 0px 0px 21px 0px rgba(0,0,0,0.2);
-    box-shadow: 0px 0px 21px 0px rgba(0,0,0,0.2); */
 }
 
 .queries {
@@ -52,6 +43,7 @@ hr {
 .results {
     transition: all 0.2s;
     transform: scale(0.2);
+    overflow-x: scroll;
 }
 
 #song-name-container {
@@ -89,21 +81,10 @@ table {
 
 th, td {
     padding: 8px 10px;
-    min-width: 8em;
+    min-width: 7em;
     text-align: left;
 }
 
 tbody tr:nth-child(odd) {
-    background-color: rgba(255, 255, 255, 0.25);
-}
-
-/* Fixes for small screens */
-@media only screen and (max-width: 500px) {
-    th, td {
-        min-width: 6em;
-    }
-    
-    .results {
-        overflow-x: scroll;
-    }
+    background-color: rgba(245, 245, 245, 0.25);
 }
