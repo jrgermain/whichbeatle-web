@@ -43,7 +43,7 @@ header {
 .results {
     transition: all 0.2s;
     transform: scale(0.2);
-    overflow-x: scroll;
+    overflow-x: auto;
 }
 
 #song-name-container {
