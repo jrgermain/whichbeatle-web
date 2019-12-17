@@ -93,9 +93,6 @@ function buildTable(headers, content) {
         return;
     }
 
-    // Unhide results div
-    resultsDiv.style.display = "block";
-
     // Create an element that will hold our results table
     const table = document.createElement("table");
 
@@ -133,6 +130,6 @@ function buildTable(headers, content) {
         }, 250);
     } else {
         resultsDiv.appendChild(table);
-        setTimeout(() => { resultsDiv.style.transform = "scale(1)" }, 10);
+        resultsDiv.style.transform = "scale(1)";
     }
 }
