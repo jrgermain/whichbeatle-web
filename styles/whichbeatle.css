@@ -20,8 +20,9 @@ header {
 }
 
 #logo {
-    height: 85px;
+    height: 55px;
     width: auto;
+    margin: 5px 0;
 }
 
 .option {
