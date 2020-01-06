@@ -12,7 +12,7 @@ My philosophy for this port of whichbeatle was to avoid over-engineering and mak
 
 ## A screenshot
 
-![screenshot](https://user-images.githubusercontent.com/37086292/70969161-3a4cfb80-2069-11ea-939c-0fe142399236.png)
+![Screenshot](https://user-images.githubusercontent.com/37086292/71790202-3b849f00-2ffd-11ea-96fc-a31eeb4616b5.png)
 
 ## Yes, it's live!
 
