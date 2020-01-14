@@ -19,10 +19,12 @@ header {
     box-sizing: border-box;
 }
 
-#logo {
-    height: 55px;
-    width: auto;
+#logo {    
+    height: 56px;
+    width: 110px;
     margin: 5px 0;
+    background-image: url(/images/logo.png);
+    background-size: contain;
 }
 
 .option {
