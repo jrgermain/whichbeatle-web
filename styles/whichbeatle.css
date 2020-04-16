@@ -39,6 +39,7 @@ header, .section {
 
 .section {
     background-color: whitesmoke;
+    color: black;
     margin: 10px;
     border: 1px solid #ddd;
     border-radius: 8px;
@@ -70,6 +71,9 @@ header, .section {
     border: 1px solid #ddd;
     outline: none;
     font-size: 16px;
+    border-color: #ccc;
+    background-color: white;
+    color: black;
 }
 
 #random {
@@ -100,4 +104,44 @@ th, td {
 
 tbody tr:nth-child(odd) {
     background-color: rgba(50, 50, 50, 0.04);
+}
+
+@media (prefers-color-scheme: dark) {
+    body {
+        background: #1C1C1C;
+    }
+
+    header {
+        background-color: #111;
+    }
+    
+    #logo, #random {
+        filter: invert(.93);
+    }
+
+    header, .section {
+        -webkit-box-shadow: 0 2px 6px 0 rgba(0, 0, 0, 0.3);
+        -moz-box-shadow: 0 2px 6px 0 rgba(0, 0, 0, 0.3);
+        box-shadow: 0 2px 6px 0 rgba(0, 0, 0, 0.3);
+    }
+
+    .section {
+        background-color: #111;
+        border-color: #333;
+        color: white;
+    }
+
+    #song-name {
+        border-color: #333;
+        background-color: #222;
+        color: white;
+    }
+
+    tbody tr:nth-child(odd) {
+        background-color: rgba(150, 150, 150, 0.04);
+    }
+
+    th {
+        border-bottom-color: #333;
+    }
 }
