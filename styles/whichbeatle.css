@@ -142,13 +142,13 @@ tbody tr:nth-child(odd) {
         filter: invert(.93);
     }
 
-    header, .section, .video {
+    header, #search, #results, .video {
         -webkit-box-shadow: 0 2px 6px 0 rgba(0, 0, 0, 0.3);
         -moz-box-shadow: 0 2px 6px 0 rgba(0, 0, 0, 0.3);
         box-shadow: 0 2px 6px 0 rgba(0, 0, 0, 0.3);
     }
 
-    .section {
+    #search, #results {
         background-color: #111;
         border-color: #333;
         color: white;
