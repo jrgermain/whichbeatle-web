@@ -1,83 +1,57 @@
 "use strict";
 
 (function () {
-    // Save references to HTML elements we will access later
-    const queryCheckboxes = Array.from(document.querySelectorAll("#composer,#singer,#album"));
-    const inputs = Array.from(document.getElementsByTagName("input"));
-    const songName = document.getElementById("song-name");
-    const random = document.getElementById("random");
-    const goButton = document.getElementById("go");
-    const resultsDiv = document.querySelector("div.results");
-
-    // Clear song input field
-    songName.value = "";
-
-    // Uncheck checkboxes
-    queryCheckboxes.forEach(checkbox => {
-        checkbox.checked = false;
+    // Various elements we'll use more than once
+    const checkboxes = Array.from(document.querySelectorAll("input[type=checkbox]"));
+    const searchBox = document.getElementById("song-name");
+    const resultTable = document.getElementById("results");
+    
+    // Initialize events
+    document.getElementById("random").addEventListener("click", fillRandomSong);
+    document.getElementById("go").addEventListener("click", submit);
+    searchBox.addEventListener("keypress", function (event) {
+        if (event.key === "Enter") {
+            submit();
+        }
     });
 
-    // When Random button is clicked, call the getRandomSong function
-    random.addEventListener("click", getRandomSong);
+    // Enable inputs (initally disabled until we confirm the user has js enabled)
+    const disabled = document.querySelectorAll("[disabled]");
+    for (let i = 0; i < disabled.length; i++) {
+        disabled[i].removeAttribute("disabled");
+    }
 
-    // Submit when Go button is clicked
-    goButton.addEventListener("click", submit);
-
-    // Submit when enter is pressed inside an input
-    inputs.forEach(input => {
-        input.addEventListener("keypress", function (event) {
-            if (event.key === "Enter") submit();
-        });
-    });
-
-    // This function gets a random song name and fills it in the song name field
-    function getRandomSong() {
-        // Get a random number between 0 and discography.length-1
+    // Get the title of a random song from the collection and use it to populate the search box
+    function fillRandomSong() {
         const index = Math.floor(Math.random() * discography.length);
         const name = discography[index].Song;
-        songName.value = name;
+        searchBox.value = name;
     }
 
-    // Submit the search after checking that it is valid
+    // Perform validations and then run a search
     function submit() {
-        // Make an array holding a list of selected search queries
-        const queries = queryCheckboxes.filter(checkbox => checkbox.checked);
+        const searchFields = checkboxes.filter(checkbox => checkbox.checked).map(checkbox => checkbox.name);
 
         // Validate input before performing search
-        if (!songName.value && !queries.length) { 
+        if (!searchBox.value && !searchFields.length) { 
             alert("Please type a song name and select which fields to display");
-        } else if (!songName.value) {
+        } else if (!searchBox.value) {
             alert("Please type a song name");
-        } else if (!queries.length) {
+        } else if (!searchFields.length) {
             alert("Please use the checkboxes to select which fields to display");
         } else {
-            search(queries, songName.value);
-        }
-    }
-
-    // Perform a search, then call buildTable() with our results
-    function search(checkboxes, songName) {
-        // Get an array of search terms
-        const queries = checkboxes.map(checkbox => checkbox.name);
-        queries.unshift("Song"); // Add song to beginning of search criteria
-
-        // Get an array of songs that match our search
-        const songs = discography.filter(song => alike(songName, song.Song));
-
-        // Make an array to store results
-        const results = [];
-        for (const song of songs) {
-            const result = {};
-            // Copy over the properties that match our search
-            for (const query of queries) {
-                result[query] = song[query];
+            const previousSearch = document.getElementById("search").dataset.currentSearch;
+            const previousFields = document.getElementById("search").dataset.currentFields;
+            if (previousSearch != searchBox.value || previousFields != searchFields) {
+                const results = discography.filter(entry => alike(searchBox.value, entry.Song));
+                buildTable(["Song", ...searchFields], results);
+                if (previousSearch != searchBox.value) {
+                    getAllVideos(results);
+                }
+                document.getElementById("search").dataset.currentSearch = searchBox.value;
+                document.getElementById("search").dataset.currentFields = searchFields;
             }
-            results.push(result);
         }
-
-        // Generate results table and add to page
-        buildTable(queries, results);
-        getAllVideos(results.map(e => "the beatles - " + e.Song));
     }
 
     // Return true if word2 is equal to or contains word1, not counting case, punctuation, or leading/trailing spaces
@@ -108,8 +82,8 @@
         // Build table content
         for (const item of content) {
             innerHTML += "<tr>";
-            for (const i in item) {
-                innerHTML += `<td>${item[i]}</td>`;
+            for (const prop of headers) {
+                innerHTML += `<td>${item[prop]}</td>`;
             }
             innerHTML += "</tr>";
         }
@@ -120,36 +94,33 @@
         /* If there are already results in the results section, shrink them, replace them, and then 
         * grow back to regular size. If not, just add results and grow.
         */
-        const oldTable = document.querySelector(".results table");
+        const oldTable = document.getElementById("results").firstChild;
         if (oldTable) {
             // Shrink existing results (to default 0.2x scale)
-            resultsDiv.style.removeProperty("transform");
+            resultTable.style.removeProperty("transform");
 
             // After shrink animation has finished:
             setTimeout(function () {
                 oldTable.replaceWith(table);
-                resultsDiv.style.transform = "scale(1)";
+                resultTable.style.transform = "scale(1)";
             }, 250);
         } else {
-            resultsDiv.appendChild(table);
-            resultsDiv.style.transform = "scale(1)";
+            resultTable.appendChild(table);
+            resultTable.style.transform = "scale(1)";
         }
     }
+
     async function getAllVideos(songs) {
-        document.querySelectorAll(".video").forEach(frame => frame.remove());
-
-        // if (!songs.length) return;
-        
         const urls = await Promise.all(songs.map(getVideoUrl));
-
-        document.getElementsByClassName("videos")[0].innerHTML = urls.filter(x=>x).map(url=>`<iframe allowfullscreen class="video" src="${url}"></iframe>`).join("\n");
+        document.getElementById("videos").innerHTML = urls.filter(url => url).map(url => `<iframe allowfullscreen class="video" src="${url}"></iframe>`).join("\n");
     }
-    function getVideoUrl(q) {
-        return new Promise((resolve, reject) => {
+
+    function getVideoUrl(searchResult) {
+        const q = "the beatles - " + searchResult.Song;
+        return new Promise((resolve) => {
             fetch(`https://www.googleapis.com/youtube/v3/search?key=AIzaSyCB6fMUCluTzvbFOMS44BGB4jDGN3xnngw&part=snippet&maxResults=1&q=${encodeURIComponent(q)}`, { 
                 method: 'GET'
             })
-            .catch(reject)
             .then(response => response.json())
             .then(json => {
                 try {
@@ -158,8 +129,11 @@
                 } catch (e) {
                     resolve(null);
                 }
+            })
+            .catch((e) => {
+                console.error(e);
+                resolve(null);
             });
-    
         });
     }
 })();

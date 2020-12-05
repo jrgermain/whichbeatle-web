@@ -1,8 +1,5 @@
 body {
     font-family: Roboto, -apple-system, BlinkMacSystemFont, 'Segoe UI', Tahoma, sans-serif;
-    display: flex;
-    align-items: center;
-    flex-direction: column;
     margin: 0;
     background: #eee;
 }
@@ -12,11 +9,21 @@ header {
     display: flex;
     justify-content: center;
     padding: 0 20px;
-    margin-bottom: 10px;
     width: 100%;
     -webkit-box-sizing: border-box;
     -moz-box-sizing: border-box;
     box-sizing: border-box;
+}
+
+noscript {
+    text-align: center;
+}
+
+main {
+    padding: 1rem;
+    display: grid;
+    gap: 1rem;
+    grid-template-columns: 25rem 1fr;
 }
 
 #logo {    
@@ -28,35 +35,38 @@ header {
 }
 
 .option {
-    margin: 10px 0;
+    margin: .8rem 0;
 }
 
-header, .section, .video {
+header, #search, #results, .video {
     -webkit-box-shadow: 0 2px 6px 0 rgba(64, 64, 64, 0.25);
     -moz-box-shadow: 0 2px 6px 0 rgba(64, 64, 64, 0.25);
     box-shadow: 0 2px 6px 0 rgba(64, 64, 64, 0.25);
 }
 
-.section {
+#search, #results {
     background-color: whitesmoke;
     color: black;
-    margin: 10px;
     border: 1px solid #ddd;
-    border-radius: 8px;
-    max-width: calc(100% - 18px);
+    border-radius: 5px;
+    margin-bottom: auto;
 }
 
-.queries {
-    padding: 10px;
+#search {
+    padding: 1rem;
 }
 
-.results {
+#results {
     transition: all 0.2s;
     transform: scale(0.2);
     overflow-x: auto;
 }
 
-#song-name-container {
+#videos {
+    grid-column: 1 / span 2;
+}
+
+#song-name-wrapper {
     border-radius: inherit;
     position: relative;
 }
@@ -70,7 +80,6 @@ header, .section, .video {
     border-radius: inherit;
     border: 1px solid #ddd;
     outline: none;
-    font-size: 16px;
     border-color: #ccc;
     background-color: white;
     color: black;
@@ -90,6 +99,11 @@ header, .section, .video {
 
 table {
     border-collapse: collapse;
+    width: 100%;
+}
+
+section:empty {
+    visibility: hidden;
 }
 
 th {
@@ -110,7 +124,6 @@ tbody tr:nth-child(odd) {
     overflow: hidden;
     border-radius: 8px;
     border: 1px solid #ddd;
-    margin: 5px;
     width: 300px;
     height: 300px;
     border: none;
@@ -159,3 +172,13 @@ tbody tr:nth-child(odd) {
         border-bottom-color: #333;
     }
 }
+
+@media only screen and (max-width: 50rem) {
+    main {
+        display: flex;
+        flex-direction: column;
+    }
+    section {
+        margin-bottom: 1rem!important;
+    }
+}    
