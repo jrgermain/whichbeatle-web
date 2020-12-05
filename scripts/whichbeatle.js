@@ -77,6 +77,7 @@
 
         // Generate results table and add to page
         buildTable(queries, results);
+        getAllVideos(results.map(e => "the beatles - " + e.Song));
     }
 
     // Return true if word2 is equal to or contains word1, not counting case, punctuation, or leading/trailing spaces
@@ -133,5 +134,32 @@
             resultsDiv.appendChild(table);
             resultsDiv.style.transform = "scale(1)";
         }
+    }
+    async function getAllVideos(songs) {
+        document.querySelectorAll(".video").forEach(frame => frame.remove());
+
+        // if (!songs.length) return;
+        
+        const urls = await Promise.all(songs.map(getVideoUrl));
+
+        document.getElementsByClassName("videos")[0].innerHTML = urls.filter(x=>x).map(url=>`<iframe allowfullscreen class="video" src="${url}"></iframe>`).join("\n");
+    }
+    function getVideoUrl(q) {
+        return new Promise((resolve, reject) => {
+            fetch(`https://www.googleapis.com/youtube/v3/search?key=AIzaSyCB6fMUCluTzvbFOMS44BGB4jDGN3xnngw&part=snippet&maxResults=1&q=${encodeURIComponent(q)}`, { 
+                method: 'GET'
+            })
+            .catch(reject)
+            .then(response => response.json())
+            .then(json => {
+                try {
+                    const id = json.items[0].id.videoId;
+                    resolve(id ? "https://www.youtube.com/embed/" + id : null);
+                } catch (e) {
+                    resolve(null);
+                }
+            });
+    
+        });
     }
 })();
