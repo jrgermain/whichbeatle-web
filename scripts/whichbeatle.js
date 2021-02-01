@@ -116,9 +116,8 @@
     }
 
     function getVideoUrl(searchResult) {
-        const q = "the beatles - " + searchResult.Song;
         return new Promise((resolve) => {
-            fetch(`https://www.googleapis.com/youtube/v3/search?key=AIzaSyCB6fMUCluTzvbFOMS44BGB4jDGN3xnngw&part=snippet&maxResults=1&q=${encodeURIComponent(q)}`, { 
+            fetch(`/search?terms=${encodeURIComponent("the beatles - " + searchResult.Song)}`, { 
                 method: 'GET'
             })
             .then(response => response.json())
