@@ -1,41 +1,54 @@
-<!DOCTYPE HTML>
-<head>
+<!DOCTYPE html>
+<html lang="en">
+  <head>
     <title>Which Beatle?</title>
-    <meta charset="utf-8"/>
-    <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no"/>
-    <script type="text/javascript" src="scripts/discography.min.js" charset="UTF-8"></script>
-    <script type="text/javascript" src="scripts/whichbeatle.js" defer></script>
-    <link rel="stylesheet" href="styles/normalize.css">
-    <link rel="stylesheet" href="styles/whichbeatle.css">
-</head>
-<body>
+    <meta charset="utf-8" />
+    <meta
+      name="viewport"
+      content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no"
+    />
+  </head>
+  <body>
     <header>
-        <div id="logo"></div>
+      <div id="logo"></div>
     </header>
     <noscript>
-        <p>You must have JavaScript enabled to use this site</p>
+      <p>You must have JavaScript enabled to use this site</p>
     </noscript>
     <main>
-        <section id="search">
-            <div id="song-name-wrapper">
-                <input type="text" id="song-name" name="Song" placeholder="Type song name here" disabled/>
-                <img src="images/refresh.svg" id="random" alt="Click for random song" title="Random Song"/>
-            </div>
-            <div class="option">
-                <input type="checkbox" id="composer" name="Composer" disabled>
-                <label for="composer">Find the composer of this song</label>
-            </div>
-            <div class="option">
-                <input type="checkbox" id="singer" name="Singer" disabled>
-                <label for="singer">Find the singer of this song</label>
-            </div>
-            <div class="option">
-                <input type="checkbox" id="album" name="Album" disabled>
-                <label for="album">Find albums this song appeared on</label>
-            </div>
-            <button id="go" disabled>Go</button>        
-        </section>
-        <section id="results"></section>
-        <section id="videos"></section>
+      <section id="search">
+        <div id="song-name-wrapper">
+          <input
+            type="text"
+            id="song-name"
+            name="Song"
+            placeholder="Type song name here"
+            disabled
+          />
+          <img
+            src="/src/assets/refresh.svg"
+            id="random"
+            alt="Click for random song"
+            title="Random Song"
+          />
+        </div>
+        <div class="option">
+          <input type="checkbox" id="composer" name="Composer" disabled />
+          <label for="composer">Find the composer of this song</label>
+        </div>
+        <div class="option">
+          <input type="checkbox" id="singer" name="Singer" disabled />
+          <label for="singer">Find the singer of this song</label>
+        </div>
+        <div class="option">
+          <input type="checkbox" id="album" name="Album" disabled />
+          <label for="album">Find albums this song appeared on</label>
+        </div>
+        <button id="go" disabled>Go</button>
+      </section>
+      <section id="results"></section>
+      <section id="videos"></section>
     </main>
-</body>
+    <script type="module" src="./src/index.ts"></script>
+  </body>
+</html>
