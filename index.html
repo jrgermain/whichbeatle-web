@@ -10,44 +10,65 @@
   </head>
   <body>
     <header>
-      <div id="logo"></div>
+      <a href="/" id="logo"></a>
     </header>
-    <noscript>
-      <p>You must have JavaScript enabled to use this site</p>
-    </noscript>
     <main>
-      <section id="search">
-        <div id="song-name-wrapper">
+      <noscript>
+        <p>Please enable JavaScript in your browser to continue</p>
+      </noscript>
+      <form id="search">
+        <div class="search-box">
           <input
             type="text"
             id="song-name"
             name="Song"
-            placeholder="Type song name here"
+            placeholder="Type the name of a Beatles song here"
+            aria-label="Song Name"
             disabled
           />
-          <img
-            src="/src/assets/refresh.svg"
-            id="random"
-            alt="Click for random song"
-            title="Random Song"
-          />
+          <span class="actions">
+            <button disabled type="button" id="random" title="Random Song">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                xmlns:xlink="http://www.w3.org/1999/xlink"
+                aria-hidden="true"
+                role="img"
+                class="iconify iconify--ph"
+                width="32"
+                height="32"
+                preserveAspectRatio="xMidYMid meet"
+                viewBox="0 0 256 256"
+              >
+                <path
+                  fill="currentColor"
+                  d="M237.7 178.3a8.1 8.1 0 0 1 0 11.4l-24 24a8.2 8.2 0 0 1-11.4 0a8.1 8.1 0 0 1 0-11.4l10.4-10.3h-11.8a72.2 72.2 0 0 1-58.6-30.2l-41.7-58.3A56.1 56.1 0 0 0 55.1 80H32a8 8 0 0 1 0-16h23.1a72.2 72.2 0 0 1 58.6 30.2l41.7 58.3a56.1 56.1 0 0 0 45.5 23.5h11.8l-10.4-10.3a8.1 8.1 0 0 1 11.4-11.4ZM143 107a8 8 0 0 0 11.2-1.9l1.2-1.6A56.1 56.1 0 0 1 200.9 80h11.8l-10.4 10.3a8.1 8.1 0 0 0 0 11.4a8.2 8.2 0 0 0 11.4 0l24-24a8.1 8.1 0 0 0 0-11.4l-24-24a8.1 8.1 0 0 0-11.4 11.4L212.7 64h-11.8a72.2 72.2 0 0 0-58.6 30.2l-1.1 1.6A8 8 0 0 0 143 107Zm-30 42a8 8 0 0 0-11.2 1.9l-1.2 1.6A56.1 56.1 0 0 1 55.1 176H32a8 8 0 0 0 0 16h23.1a72.2 72.2 0 0 0 58.6-30.2l1.1-1.6A8 8 0 0 0 113 149Z"
+                ></path>
+              </svg>
+              <span class="sr-only">Random Song</span>
+            </button>
+            <button disabled type="submit" id="go" title="Go">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                xmlns:xlink="http://www.w3.org/1999/xlink"
+                aria-hidden="true"
+                role="img"
+                class="iconify iconify--ph"
+                width="32"
+                height="32"
+                preserveAspectRatio="xMidYMid meet"
+                viewBox="0 0 256 256"
+              >
+                <path
+                  fill="currentColor"
+                  d="m232.5 215.5l-40.7-40.7A94.9 94.9 0 0 0 212 116a96 96 0 1 0-96 96a94.9 94.9 0 0 0 58.8-20.2l40.7 40.7a12.1 12.1 0 0 0 17 0a12 12 0 0 0 0-17ZM44 116a72 72 0 1 1 72 72a72.1 72.1 0 0 1-72-72Z"
+                ></path>
+              </svg>
+              <span class="sr-only">Go</span>
+            </button>
+          </span>
         </div>
-        <div class="option">
-          <input type="checkbox" id="composer" name="Composer" disabled />
-          <label for="composer">Find the composer of this song</label>
-        </div>
-        <div class="option">
-          <input type="checkbox" id="singer" name="Singer" disabled />
-          <label for="singer">Find the singer of this song</label>
-        </div>
-        <div class="option">
-          <input type="checkbox" id="album" name="Album" disabled />
-          <label for="album">Find albums this song appeared on</label>
-        </div>
-        <button id="go" disabled>Go</button>
-      </section>
+      </form>
       <section id="results"></section>
-      <section id="videos"></section>
     </main>
     <script type="module" src="./src/index.ts"></script>
   </body>

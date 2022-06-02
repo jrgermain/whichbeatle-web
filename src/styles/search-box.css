@@ -1,0 +1,101 @@
+.search-box {
+  display: block;
+  position: relative;
+  font-size: 1.25rem;
+}
+
+.search-box input {
+  transition: border-color 0.2s ease, box-shadow 0.2s ease;
+  box-sizing: border-box;
+  width: 100%;
+  padding: 0.5em;
+  border-radius: 5px;
+  border: 1px solid #bbb;
+  outline: none;
+  background-color: white;
+  color: black;
+  box-shadow: 0 2px 6px 0 rgba(64, 64, 64, 0.25);
+}
+
+.search-box input:focus-visible {
+  border-color: #6ae;
+  box-shadow: 0 0 0 1px #6ae, 0 2px 6px 0 rgba(64, 64, 64, 0.25);
+}
+
+.search-box .actions {
+  position: absolute;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: row;
+  top: 1px;
+  right: 1px;
+  height: calc(100% - 2px);
+  border-top-right-radius: 4px;
+  border-bottom-right-radius: 4px;
+  overflow: hidden;
+}
+
+.search-box .actions button {
+  border: 0;
+  outline: 0;
+  border-radius: 0;
+  padding: 1em;
+  font-size: 0.5em;
+  transition: background-color 0.2s ease, box-shadow 0.1s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.search-box .actions button:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.search-box .actions button svg {
+  box-sizing: border-box;
+  height: 100%;
+  width: auto;
+}
+
+.search-box .actions button[type="submit"] {
+  background-color: #28d;
+  color: white;
+}
+
+.search-box .actions button[type="button"] {
+  background-color: transparent;
+  color: #333;
+}
+
+.search-box .actions button[type="button"]:enabled:hover {
+  background-color: #eee;
+}
+
+.search-box .actions button[type="submit"]:enabled:hover {
+  background-color: #39e;
+}
+
+.search-box .actions button:enabled:active {
+  box-shadow: inset 0 0 5px 0 #3339;
+}
+
+@media (prefers-color-scheme: dark) {
+  .search-box input {
+    background-color: black;
+    color: white;
+  }
+
+  .search-box .actions button[type="button"] {
+    background-color: transparent;
+    color: #ccc;
+  }
+
+  .search-box .actions button[type="button"]:enabled:hover {
+    background-color: #222;
+  }
+
+  .search-box .actions button:enabled:active {
+    box-shadow: inset 0 0 5px 0 #000a;
+  }
+}
