@@ -4,7 +4,7 @@ import "./styles/whichbeatle.css";
 import "./styles/search-box.css";
 import "./styles/result.css";
 import "./styles/colors.css";
-import { buildResultElement } from "./lib/html";
+import { buildResultElement, NO_RESULTS_TEXT } from "./lib/html";
 import { findSongs } from "./lib/search";
 
 const searchBox = document.getElementById("song-name") as HTMLInputElement;
@@ -27,6 +27,10 @@ document
 const search = new URLSearchParams(window.location.search).get("song");
 if (search) {
   searchBox.value = search;
+
   const results = await Promise.all(findSongs(search).map(buildResultElement));
+  if (!results.length) {
+    results.push(NO_RESULTS_TEXT);
+  }
   document.getElementById("results")!.replaceChildren(...results);
 }

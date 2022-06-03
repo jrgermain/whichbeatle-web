@@ -26,3 +26,9 @@ export async function buildResultElement({
 
   return resultElement;
 }
+
+const NO_RESULTS_TEXT = document.createElement("span");
+NO_RESULTS_TEXT.textContent = "No results found";
+NO_RESULTS_TEXT.style.textAlign = "center";
+
+export { NO_RESULTS_TEXT };
