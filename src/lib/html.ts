@@ -1,23 +1,6 @@
 import type { DiscographyEntry } from "./discography-entry";
 import { getVideoUrl } from "./search";
 
-export const render = (
-  tagName: string,
-  content: string | HTMLElement = "",
-  attrs: Record<string, string> = {}
-): HTMLElement => {
-  const element = document.createElement(tagName);
-  if (typeof content === "string") {
-    element.textContent = content;
-  } else {
-    element.appendChild(content);
-  }
-  Object.entries(attrs).forEach(([attr, val]) =>
-    element.setAttribute(attr, val)
-  );
-  return element;
-};
-
 export async function buildResultElement({
   Song: song,
   Album: album,
