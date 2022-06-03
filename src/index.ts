@@ -1,8 +1,8 @@
 import discography from "./assets/discography.json";
 import "normalize.css";
-import "./styles/whichbeatle.css";
+import "./styles/base.css";
 import "./styles/search-box.css";
-import "./styles/result.css";
+import "./styles/search-result.css";
 import "./styles/colors.css";
 import { buildResultElement, NO_RESULTS_TEXT } from "./lib/html";
 import { findSongs } from "./lib/search";
@@ -14,7 +14,7 @@ document
   .querySelectorAll(":disabled")
   .forEach((element) => element.removeAttribute("disabled"));
 
-// Enable the user to fill in a random song
+// Allow the user to fill in a random song by clicking the randomize button
 document
   .getElementById("random")!
   .addEventListener("click", function fillRandomSong() {
