@@ -60,7 +60,7 @@
               >
                 <path
                   fill="currentColor"
-                  d="m232.5 215.5l-40.7-40.7A94.9 94.9 0 0 0 212 116a96 96 0 1 0-96 96a94.9 94.9 0 0 0 58.8-20.2l40.7 40.7a12.1 12.1 0 0 0 17 0a12 12 0 0 0 0-17ZM44 116a72 72 0 1 1 72 72a72.1 72.1 0 0 1-72-72Z"
+                  d="m224.5 136.5l-72 72a12.1 12.1 0 0 1-17 0a12 12 0 0 1 0-17L187 140H40a12 12 0 0 1 0-24h147l-51.5-51.5a12 12 0 0 1 17-17l72 72a12 12 0 0 1 0 17Z"
                 ></path>
               </svg>
               <span class="sr-only">Go</span>
@@ -70,6 +70,74 @@
       </form>
       <section id="results"></section>
     </main>
+    <template id="search-result">
+      <article class="result">
+        <iframe class="video" allowfullscreen="" src=""></iframe>
+        <div class="details">
+          <h1 class="song"></h1>
+          <span class="album">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              xmlns:xlink="http://www.w3.org/1999/xlink"
+              aria-hidden="true"
+              role="img"
+              class="iconify iconify--ph"
+              width="32"
+              height="32"
+              preserveAspectRatio="xMidYMid meet"
+              viewBox="0 0 256 256"
+            >
+              <path
+                fill="currentColor"
+                d="M212.9 25.7a8 8 0 0 0-6.8-1.5l-128 32A8 8 0 0 0 72 64v110.1a35.3 35.3 0 0 0-20-6.1a36 36 0 1 0 36 36v-85.8l112-28v51.9a35.3 35.3 0 0 0-20-6.1a36 36 0 1 0 36 36V32a7.8 7.8 0 0 0-3.1-6.3ZM52 224a20 20 0 1 1 20-20a20.1 20.1 0 0 1-20 20Zm36-122.2V70.2l112-28v31.6Zm92 90.2a20 20 0 1 1 20-20a20.1 20.1 0 0 1-20 20Z"
+              ></path>
+            </svg>
+            <span class="label">Album</span>
+            <span class="album-name"></span>
+          </span>
+          <span class="singer">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              xmlns:xlink="http://www.w3.org/1999/xlink"
+              aria-hidden="true"
+              role="img"
+              class="iconify iconify--ph"
+              width="32"
+              height="32"
+              preserveAspectRatio="xMidYMid meet"
+              viewBox="0 0 256 256"
+            >
+              <path
+                fill="currentColor"
+                d="M219.5 138.2A71.9 71.9 0 0 0 117.8 36.5l-.7.6l-.6.7A71.6 71.6 0 0 0 96 88a65.1 65.1 0 0 0 .4 7.7l-74.8 102a16 16 0 0 0 1.6 20.8l14.3 14.3a16 16 0 0 0 20.8 1.6l102-74.8a65.1 65.1 0 0 0 7.7.4a71.6 71.6 0 0 0 50.2-20.5l.7-.6ZM224 88a55.5 55.5 0 0 1-11.2 33.5l-78.3-78.3A55.9 55.9 0 0 1 224 88ZM48.8 221.5l-14.3-14.3l67.1-91.4a72.2 72.2 0 0 0 38.6 38.6ZM112 88a55.5 55.5 0 0 1 11.2-33.5l78.3 78.3A55.9 55.9 0 0 1 112 88Zm-6.3 62.3a8.1 8.1 0 0 1 0 11.4l-12 12a8.2 8.2 0 0 1-11.4 0a8.1 8.1 0 0 1 0-11.4l12-12a8.1 8.1 0 0 1 11.4 0Z"
+              ></path>
+            </svg>
+            <span class="label">Singer</span>
+            <span class="singer-name"></span>
+          </span>
+          <span class="composer">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              xmlns:xlink="http://www.w3.org/1999/xlink"
+              aria-hidden="true"
+              role="img"
+              class="iconify iconify--ph"
+              width="32"
+              height="32"
+              preserveAspectRatio="xMidYMid meet"
+              viewBox="0 0 256 256"
+            >
+              <path
+                fill="currentColor"
+                d="M224 76.7L179.3 32a15.9 15.9 0 0 0-22.6 0l-120 120a15.9 15.9 0 0 0-4.7 11.3V208a16 16 0 0 0 16 16h44.7a15.9 15.9 0 0 0 11.3-4.7l120-120a16.1 16.1 0 0 0 0-22.6ZM51.3 160L136 75.3L152.7 92L68 176.7ZM48 179.3L76.7 208H48Zm48 25.4L79.3 188l84.7-84.7l16.7 16.7Zm96-96L147.3 64L168 43.3L212.7 88Z"
+              ></path>
+            </svg>
+            <span class="label">Composer</span>
+            <span class="composer-name"></span>
+          </span>
+        </div>
+      </article>
+    </template>
     <script type="module" src="./src/index.ts"></script>
   </body>
 </html>

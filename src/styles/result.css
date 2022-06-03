@@ -12,32 +12,100 @@
   animation: result-show 0.5s ease forwards;
   border-radius: 8px;
   background-color: white;
-  padding: 1rem;
   margin: 1rem;
-  box-shadow: 0 2px 6px 0 rgba(64, 64, 64, 0.25);
+  box-shadow: 0 2px 6px 0 #cccc;
+  display: flex;
+  flex-direction: row;
+  height: 15em;
+  max-width: 900px;
+  width: 100%;
+  margin: 0 auto;
+  border: 1px solid #ccc;
+}
+
+.result .video {
+  height: 100%;
+  width: 15em;
+  border-top-left-radius: inherit;
+  border-bottom-left-radius: inherit;
+  border: 0;
+  outline: 0;
 }
 
 .result .details {
+  display: grid;
+  gap: 1em;
+  padding: 1.5em;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-rows: auto 1fr;
+  box-sizing: border-box;
+  width: 100%;
+}
+
+.result .video + .details {
+  width: calc(100% - 15em);
+}
+
+.result .details svg {
+  /* color: #39e; */
+  height: 2.5em;
+  width: 2.5em;
+}
+
+.result .details .song {
+  grid-column: 1 / -1;
+  font-size: 1.5em;
+  font-weight: bold;
+  margin: 0;
+  padding-bottom: 0.25em;
+  border-bottom: 1px dashed #ccc;
+}
+
+.result .details .album,
+.result .details .composer,
+.result .details .singer {
   display: flex;
   flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 0.25em;
+  text-align: center;
 }
 
-.result .details .song::before {
-  content: "Song: ";
+.result .details .album .label,
+.result .details .composer .label,
+.result .details .singer .label {
   font-weight: bold;
+  font-size: 0.8em;
+  margin-top: 0.5em;
 }
 
-.result .details .album::before {
-  content: "Album: ";
-  font-weight: bold;
+@media screen and (max-width: 800px) {
+  .result {
+    flex-direction: column;
+    width: 80vw;
+    box-sizing: border-box;
+    height: auto;
+  }
+
+  .result .video {
+    width: 100%;
+    height: auto;
+    aspect-ratio: 1;
+    border-top-left-radius: inherit;
+    border-top-right-radius: inherit;
+    border-bottom-left-radius: 0;
+    border: 0;
+    outline: 0;
+  }
+
+  .result .details {
+    width: 100%;
+  }
 }
 
-.result .details .singer::before {
-  content: "Singer: ";
-  font-weight: bold;
-}
-
-.result .details .composer::before {
-  content: "Composer: ";
-  font-weight: bold;
+@media screen and (min-width: 2000px) {
+  .result:nth-child(odd):last-child {
+    grid-column: 1/-1;
+  }
 }

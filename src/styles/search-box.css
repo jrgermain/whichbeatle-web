@@ -2,6 +2,7 @@
   display: block;
   position: relative;
   font-size: 1.25rem;
+  margin: 2em auto;
 }
 
 .search-box input {
@@ -14,12 +15,12 @@
   outline: none;
   background-color: white;
   color: black;
-  box-shadow: 0 2px 6px 0 rgba(64, 64, 64, 0.25);
+  box-shadow: 0 2px 6px 0 #cccc;
 }
 
 .search-box input:focus-visible {
   border-color: #6ae;
-  box-shadow: 0 0 0 1px #6ae, 0 2px 6px 0 rgba(64, 64, 64, 0.25);
+  box-shadow: 0 0 0 1px #6ae, 0 2px 6px 0 cccc;
 }
 
 .search-box .actions {
