@@ -11,16 +11,17 @@
 .search-result {
   animation: result-show 0.5s ease forwards;
   border-radius: 8px;
-  background-color: white;
+  background-color: var(--result-bg);
+  color: var(--result-fg);
   margin: 1rem;
-  box-shadow: 0 2px 6px 0 #cccc;
+  box-shadow: 0 2px 6px 0 var(--shadow-color);
   display: flex;
   flex-direction: row;
   height: 15em;
   max-width: 900px;
   width: 100%;
   margin: 0 auto;
-  border: 1px solid #ccc;
+  border: 1px solid var(--border-color);
 }
 
 .search-result .video {
@@ -58,7 +59,7 @@
   font-weight: bold;
   margin: 0;
   padding-bottom: 0.25em;
-  border-bottom: 1px dashed #ccc;
+  border-bottom: 1.5px dashed #9998;
 }
 
 .search-result .details .album,

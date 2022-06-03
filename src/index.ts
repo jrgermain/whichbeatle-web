@@ -3,6 +3,7 @@ import "normalize.css";
 import "./styles/whichbeatle.css";
 import "./styles/search-box.css";
 import "./styles/result.css";
+import "./styles/colors.css";
 import { buildResultElement } from "./lib/html";
 import { findSongs } from "./lib/search";
 
