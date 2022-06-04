@@ -24,13 +24,17 @@ document
   });
 
 // Show search results
-const search = new URLSearchParams(window.location.search).get("song");
-if (search) {
-  searchBox.value = search;
+(async () => {
+  const search = new URLSearchParams(window.location.search).get("song");
+  if (search) {
+    searchBox.value = search;
 
-  const results = await Promise.all(findSongs(search).map(buildResultElement));
-  if (!results.length) {
-    results.push(NO_RESULTS_TEXT);
+    const results = await Promise.all(
+      findSongs(search).map(buildResultElement)
+    );
+    if (!results.length) {
+      results.push(NO_RESULTS_TEXT);
+    }
+    document.getElementById("results")!.replaceChildren(...results);
   }
-  document.getElementById("results")!.replaceChildren(...results);
-}
+})();
