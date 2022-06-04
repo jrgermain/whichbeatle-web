@@ -21,7 +21,7 @@ resource "aws_apigatewayv2_integration" "search" {
     "overwrite:querystring.maxResults" = "1"
     "overwrite:querystring.part"       = "snippet"
     "overwrite:querystring.q"          = "the beatles - $request.querystring.song"
-    "remove:querystring.song"          = ""
+    "remove:querystring.song"          = null
   }
 }
 
