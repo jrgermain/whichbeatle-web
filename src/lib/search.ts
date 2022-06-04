@@ -22,7 +22,7 @@ export function isFuzzyMatch(word1: string, word2: string) {
 export async function getVideoUrl(songTitle: string) {
   try {
     const response = await fetch(
-      `/search?terms=${encodeURIComponent("the beatles - " + songTitle)}`,
+      `/api/search?song=${encodeURIComponent(songTitle)}`,
       {
         method: "GET",
       }
