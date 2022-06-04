@@ -52,8 +52,8 @@ resource "aws_cloudfront_distribution" "frontend" {
 
   ordered_cache_behavior {
     path_pattern     = "/api/*"
-    allowed_methods  = ["GET", "OPTIONS"]
-    cached_methods   = ["GET", "OPTIONS"]
+    allowed_methods  = ["GET", "HEAD", "OPTIONS"]
+    cached_methods   = ["GET", "HEAD", "OPTIONS"]
     target_origin_id = local.origin_id_api
     default_ttl      = 604800 # 1 week
     max_ttl          = 604800 # 1 week
