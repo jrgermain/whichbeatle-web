@@ -21,7 +21,7 @@ resource "aws_cloudfront_distribution" "frontend" {
 
   origin {
     origin_id   = local.origin_id_api
-    domain_name = trimprefix(aws_apigatewayv2_stage.default.invoke_url, "https://")
+    domain_name = trimsuffix(aws_apigatewayv2_stage.default.invoke_url, "/")
 
     custom_origin_config {
       http_port              = 80
