@@ -1,0 +1,9 @@
+.github/
+dist/
+node_modules/
+src/
+.gitignore
+index.html
+package.json
+package-lock.json
+tsconfig.json
