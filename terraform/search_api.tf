@@ -27,6 +27,6 @@ resource "aws_apigatewayv2_integration" "search" {
 
 resource "aws_apigatewayv2_route" "search" {
   api_id    = aws_apigatewayv2_api.api.id
-  route_key = "GET /search"
+  route_key = "GET /api/search"
   target    = "integrations/${aws_apigatewayv2_integration.search.id}"
 }
