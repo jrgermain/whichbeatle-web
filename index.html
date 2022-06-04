@@ -1,41 +1,143 @@
-<!DOCTYPE HTML>
-<head>
+<!DOCTYPE html>
+<html lang="en">
+  <head>
     <title>Which Beatle?</title>
-    <meta charset="utf-8"/>
-    <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no"/>
-    <script type="text/javascript" src="scripts/discography.min.js" charset="UTF-8"></script>
-    <script type="text/javascript" src="scripts/whichbeatle.js" defer></script>
-    <link rel="stylesheet" href="styles/normalize.css">
-    <link rel="stylesheet" href="styles/whichbeatle.css">
-</head>
-<body>
+    <meta charset="utf-8" />
+    <meta
+      name="viewport"
+      content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no"
+    />
+  </head>
+  <body>
     <header>
-        <div id="logo"></div>
+      <a href="/" id="logo"></a>
     </header>
-    <noscript>
-        <p>You must have JavaScript enabled to use this site</p>
-    </noscript>
     <main>
-        <section id="search">
-            <div id="song-name-wrapper">
-                <input type="text" id="song-name" name="Song" placeholder="Type song name here" disabled/>
-                <img src="images/refresh.svg" id="random" alt="Click for random song" title="Random Song"/>
-            </div>
-            <div class="option">
-                <input type="checkbox" id="composer" name="Composer" disabled>
-                <label for="composer">Find the composer of this song</label>
-            </div>
-            <div class="option">
-                <input type="checkbox" id="singer" name="Singer" disabled>
-                <label for="singer">Find the singer of this song</label>
-            </div>
-            <div class="option">
-                <input type="checkbox" id="album" name="Album" disabled>
-                <label for="album">Find albums this song appeared on</label>
-            </div>
-            <button id="go" disabled>Go</button>        
-        </section>
-        <section id="results"></section>
-        <section id="videos"></section>
+      <noscript>
+        <p>Please enable JavaScript in your browser to continue</p>
+      </noscript>
+      <form id="search">
+        <div class="search-box">
+          <input
+            type="text"
+            id="song-name"
+            name="song"
+            placeholder="Type the name of a Beatles song here"
+            aria-label="Song Name"
+            disabled
+          />
+          <span class="actions">
+            <button disabled type="button" id="random" title="Random Song">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                xmlns:xlink="http://www.w3.org/1999/xlink"
+                aria-hidden="true"
+                role="img"
+                class="iconify iconify--ph"
+                width="32"
+                height="32"
+                preserveAspectRatio="xMidYMid meet"
+                viewBox="0 0 256 256"
+              >
+                <path
+                  fill="currentColor"
+                  d="M237.7 178.3a8.1 8.1 0 0 1 0 11.4l-24 24a8.2 8.2 0 0 1-11.4 0a8.1 8.1 0 0 1 0-11.4l10.4-10.3h-11.8a72.2 72.2 0 0 1-58.6-30.2l-41.7-58.3A56.1 56.1 0 0 0 55.1 80H32a8 8 0 0 1 0-16h23.1a72.2 72.2 0 0 1 58.6 30.2l41.7 58.3a56.1 56.1 0 0 0 45.5 23.5h11.8l-10.4-10.3a8.1 8.1 0 0 1 11.4-11.4ZM143 107a8 8 0 0 0 11.2-1.9l1.2-1.6A56.1 56.1 0 0 1 200.9 80h11.8l-10.4 10.3a8.1 8.1 0 0 0 0 11.4a8.2 8.2 0 0 0 11.4 0l24-24a8.1 8.1 0 0 0 0-11.4l-24-24a8.1 8.1 0 0 0-11.4 11.4L212.7 64h-11.8a72.2 72.2 0 0 0-58.6 30.2l-1.1 1.6A8 8 0 0 0 143 107Zm-30 42a8 8 0 0 0-11.2 1.9l-1.2 1.6A56.1 56.1 0 0 1 55.1 176H32a8 8 0 0 0 0 16h23.1a72.2 72.2 0 0 0 58.6-30.2l1.1-1.6A8 8 0 0 0 113 149Z"
+                ></path>
+              </svg>
+              <span class="sr-only">Random Song</span>
+            </button>
+            <button disabled type="submit" id="go" title="Go">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                xmlns:xlink="http://www.w3.org/1999/xlink"
+                aria-hidden="true"
+                role="img"
+                class="iconify iconify--ph"
+                width="32"
+                height="32"
+                preserveAspectRatio="xMidYMid meet"
+                viewBox="0 0 256 256"
+              >
+                <path
+                  fill="currentColor"
+                  d="m224.5 136.5l-72 72a12.1 12.1 0 0 1-17 0a12 12 0 0 1 0-17L187 140H40a12 12 0 0 1 0-24h147l-51.5-51.5a12 12 0 0 1 17-17l72 72a12 12 0 0 1 0 17Z"
+                ></path>
+              </svg>
+              <span class="sr-only">Go</span>
+            </button>
+          </span>
+        </div>
+      </form>
+      <section id="results"></section>
     </main>
-</body>
+    <template id="search-result">
+      <article class="search-result">
+        <iframe class="video" allowfullscreen="" src=""></iframe>
+        <div class="details">
+          <h1 class="song"></h1>
+          <span class="album">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              xmlns:xlink="http://www.w3.org/1999/xlink"
+              aria-hidden="true"
+              role="img"
+              class="iconify iconify--ph"
+              width="32"
+              height="32"
+              preserveAspectRatio="xMidYMid meet"
+              viewBox="0 0 256 256"
+            >
+              <path
+                fill="currentColor"
+                d="M212.9 25.7a8 8 0 0 0-6.8-1.5l-128 32A8 8 0 0 0 72 64v110.1a35.3 35.3 0 0 0-20-6.1a36 36 0 1 0 36 36v-85.8l112-28v51.9a35.3 35.3 0 0 0-20-6.1a36 36 0 1 0 36 36V32a7.8 7.8 0 0 0-3.1-6.3ZM52 224a20 20 0 1 1 20-20a20.1 20.1 0 0 1-20 20Zm36-122.2V70.2l112-28v31.6Zm92 90.2a20 20 0 1 1 20-20a20.1 20.1 0 0 1-20 20Z"
+              ></path>
+            </svg>
+            <span class="label">Album</span>
+            <span class="album-name"></span>
+          </span>
+          <span class="singer">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              xmlns:xlink="http://www.w3.org/1999/xlink"
+              aria-hidden="true"
+              role="img"
+              class="iconify iconify--ph"
+              width="32"
+              height="32"
+              preserveAspectRatio="xMidYMid meet"
+              viewBox="0 0 256 256"
+            >
+              <path
+                fill="currentColor"
+                d="M219.5 138.2A71.9 71.9 0 0 0 117.8 36.5l-.7.6l-.6.7A71.6 71.6 0 0 0 96 88a65.1 65.1 0 0 0 .4 7.7l-74.8 102a16 16 0 0 0 1.6 20.8l14.3 14.3a16 16 0 0 0 20.8 1.6l102-74.8a65.1 65.1 0 0 0 7.7.4a71.6 71.6 0 0 0 50.2-20.5l.7-.6ZM224 88a55.5 55.5 0 0 1-11.2 33.5l-78.3-78.3A55.9 55.9 0 0 1 224 88ZM48.8 221.5l-14.3-14.3l67.1-91.4a72.2 72.2 0 0 0 38.6 38.6ZM112 88a55.5 55.5 0 0 1 11.2-33.5l78.3 78.3A55.9 55.9 0 0 1 112 88Zm-6.3 62.3a8.1 8.1 0 0 1 0 11.4l-12 12a8.2 8.2 0 0 1-11.4 0a8.1 8.1 0 0 1 0-11.4l12-12a8.1 8.1 0 0 1 11.4 0Z"
+              ></path>
+            </svg>
+            <span class="label">Singer</span>
+            <span class="singer-name"></span>
+          </span>
+          <span class="composer">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              xmlns:xlink="http://www.w3.org/1999/xlink"
+              aria-hidden="true"
+              role="img"
+              class="iconify iconify--ph"
+              width="32"
+              height="32"
+              preserveAspectRatio="xMidYMid meet"
+              viewBox="0 0 256 256"
+            >
+              <path
+                fill="currentColor"
+                d="M224 76.7L179.3 32a15.9 15.9 0 0 0-22.6 0l-120 120a15.9 15.9 0 0 0-4.7 11.3V208a16 16 0 0 0 16 16h44.7a15.9 15.9 0 0 0 11.3-4.7l120-120a16.1 16.1 0 0 0 0-22.6ZM51.3 160L136 75.3L152.7 92L68 176.7ZM48 179.3L76.7 208H48Zm48 25.4L79.3 188l84.7-84.7l16.7 16.7Zm96-96L147.3 64L168 43.3L212.7 88Z"
+              ></path>
+            </svg>
+            <span class="label">Composer</span>
+            <span class="composer-name"></span>
+          </span>
+        </div>
+      </article>
+    </template>
+    <script type="module" src="./src/index.ts"></script>
+  </body>
+</html>
