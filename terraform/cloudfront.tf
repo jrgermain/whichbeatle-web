@@ -36,8 +36,8 @@ resource "aws_cloudfront_distribution" "frontend" {
     allowed_methods  = ["GET", "HEAD", "OPTIONS"]
     cached_methods   = ["GET", "HEAD", "OPTIONS"]
     target_origin_id = local.origin_id_frontend_s3
-    default_ttl      = 31536000
-    max_ttl          = 31536000
+    default_ttl      = 31536000 # 1 year
+    max_ttl          = 31536000 # 1 year
 
     forwarded_values {
       query_string = false
@@ -56,6 +56,7 @@ resource "aws_cloudfront_distribution" "frontend" {
     cached_methods   = ["GET", "OPTIONS"]
     target_origin_id = local.origin_id_api
     default_ttl      = 604800 # 1 week
+    max_ttl          = 604800 # 1 week
 
     forwarded_values {
       query_string = true
