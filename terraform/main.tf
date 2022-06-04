@@ -4,7 +4,7 @@ terraform {
   cloud {
     organization = "jrgermain"
     workspaces {
-      name = "whichbeatle"
+      name = "whichbeatle-web"
     }
   }
 
