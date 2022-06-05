@@ -20,7 +20,7 @@ resource "aws_apigatewayv2_integration" "search" {
     "overwrite:querystring.key"        = var.youtube_api_key
     "overwrite:querystring.maxResults" = "1"
     "overwrite:querystring.part"       = "snippet"
-    "overwrite:querystring.q"          = "the beatles - $request.querystring.song"
+    "overwrite:querystring.q"          = "the+beatles+-+$request.querystring.song"
     "remove:querystring.song"          = "''"
   }
 }
