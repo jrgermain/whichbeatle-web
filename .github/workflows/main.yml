@@ -4,7 +4,7 @@ name: CI
 
 on:
   push:
-    branches: [ "master" ]
+    branches: ["master"]
   workflow_dispatch:
 
 jobs:
@@ -19,6 +19,8 @@ jobs:
           cache-dependency-path: package-lock.json
       - name: Install dependencies
         run: npm install
+      - name: Lint
+        run: npm run lint
       - name: Build
         run: npm run build
       - name: Set AWS credentials
@@ -28,4 +30,4 @@ jobs:
           aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
           aws-region: us-east-1
       - name: Deploy
-        run: aws s3 sync ./dist/ s3://jrgermain-whichbeatle-frontend --delete        
+        run: aws s3 sync ./dist/ s3://jrgermain-whichbeatle-frontend --delete
