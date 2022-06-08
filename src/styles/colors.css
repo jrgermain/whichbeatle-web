@@ -1,5 +1,6 @@
 :root {
   --page-bg: #f0f0f0;
+  --page-fg: #333;
   --search-box-bg: white;
   --search-box-fg: black;
   --result-bg: white;
@@ -12,13 +13,14 @@
 @media (prefers-color-scheme: dark) {
   :root {
     --page-bg: #222;
+    --page-fg: #eee;
     --search-box-bg: black;
     --search-box-fg: white;
     --result-bg: black;
     --result-fg: white;
     --header-bg: #111;
     --border-color: #444;
-    --shadow-color: black;
+    --shadow-color: #111;
   }
 
   #logo {
