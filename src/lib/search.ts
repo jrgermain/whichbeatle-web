@@ -21,12 +21,13 @@ export function isFuzzyMatch(word1: string, word2: string) {
 
 export async function getVideoUrl(songTitle: string) {
   try {
-    const response = await fetch(
-      `/api/search?song=${encodeURIComponent(songTitle)}`,
-      {
-        method: "GET",
-      }
-    );
+    // Note: this is a temporary workaround for an issue with API Gateway.
+    // See https://repost.aws/questions/QUw-GndVI8TsqK_c63ZWJiLQ/http-api-gateway-http-uri-integration-fails-when-query-contains-spaces
+    const songParam = encodeURIComponent(encodeURIComponent(songTitle));
+
+    const response = await fetch(`/api/search?song=${songParam}`, {
+      method: "GET",
+    });
     const json = await response.json();
     const id = json.items[0]?.id?.videoId;
     return id ? `https://www.youtube.com/embed/${id}` : null;
