@@ -19,7 +19,7 @@ header {
   height: 56px;
   width: 110px;
   margin: 5px 0;
-  background-image: url(/src/assets/logo.png);
+  background-image: url("/src/assets/logo.png");
   background-size: contain;
 }
 
