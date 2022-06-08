@@ -1,11 +1,10 @@
-import discography from "./assets/discography.json";
 import "normalize.css";
 import "./styles/base.css";
 import "./styles/search-box.css";
 import "./styles/search-result.css";
 import "./styles/colors.css";
 import { buildResultElement, NO_RESULTS_TEXT } from "./lib/html";
-import { findSongs } from "./lib/search";
+import { findSongs, getRandomSongTitle } from "./lib/search";
 
 const searchBox = document.getElementById("song-name") as HTMLInputElement;
 
@@ -18,9 +17,7 @@ document
 document
   .getElementById("random")!
   .addEventListener("click", function fillRandomSong() {
-    const index = Math.floor(Math.random() * discography.length);
-    const name = discography[index].Song;
-    searchBox.value = name;
+    searchBox.value = getRandomSongTitle();
   });
 
 // Show search results

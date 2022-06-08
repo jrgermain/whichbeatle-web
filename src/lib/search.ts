@@ -39,3 +39,8 @@ export async function getVideoUrl(songTitle: string) {
 export function findSongs(title: string) {
   return discography.filter(({ Song }) => isFuzzyMatch(title, Song));
 }
+
+export function getRandomSongTitle() {
+  const index = Math.floor(Math.random() * discography.length);
+  return discography[index].Song;
+}
