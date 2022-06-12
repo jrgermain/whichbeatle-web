@@ -1,8 +1,7 @@
 {
   "name": "whichbeatle-web",
   "version": "1.0.0",
-  "description": "## My whichbeatle program, ported to html/css/js",
-  "main": "index.js",
+  "description": "Find info about Beatles songs, listen to your favorites, and discover new ones!",
   "scripts": {
     "start": "vite",
     "build": "tsc && vite build",
@@ -13,8 +12,7 @@
     "type": "git",
     "url": "git+https://github.com/jrgermain/whichbeatle-web.git"
   },
-  "author": "",
-  "license": "ISC",
+  "author": "jrgermain",
   "bugs": {
     "url": "https://github.com/jrgermain/whichbeatle-web/issues"
   },
