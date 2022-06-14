@@ -1,7 +1,7 @@
 .search-box {
   display: flex;
   position: relative;
-  font-size: clamp(0.8rem, 3vw, 1.25rem);
+  font-size: clamp(1rem, 3vw, 1.25rem);
   margin: 2em auto;
   border-radius: 5px;
   border: 1px solid var(--border-color);
@@ -54,7 +54,7 @@
   cursor: not-allowed;
 }
 
-.search-box .actions button svg {
+.search-box .actions button .button-icon {
   box-sizing: border-box;
   height: 67%;
   width: auto;
@@ -80,4 +80,65 @@
 
 .search-box .actions button:enabled:active {
   box-shadow: inset 0 0 5px 0 var(--shadow-color);
+}
+
+/* On small screens, move the buttons outside the search box to save horizontal space */
+@media screen and (max-width: 800px) {
+  #search {
+    margin-bottom: 4rem;
+  }
+
+  .search-box input {
+    border-radius: 5px !important;
+  }
+
+  .search-box .actions {
+    position: absolute;
+    left: 0;
+    top: 3.5em;
+    width: 100%;
+    justify-content: space-between;
+  }
+
+  .search-box .actions button {
+    width: 48%;
+    border-radius: 10px !important;
+    height: 2.5em;
+  }
+
+  .search-box .actions button .button-label {
+    position: static;
+    width: auto;
+    height: auto;
+  }
+
+  .search-box .actions button .button-icon {
+    display: none;
+  }
+
+  .search-box .actions button[type="button"] {
+    background-color: #ddd;
+    color: #333;
+    border: 1px solid #ccc;
+  }
+
+  .search-box .actions button[type="submit"] {
+    border: 1px solid #28d;
+  }
+
+  .search-box .actions button[type="button"]:enabled:hover {
+    background-color: #e3e3e3;
+  }
+
+  @media (prefers-color-scheme: dark) {
+    .search-box .actions button[type="button"] {
+      background-color: #333;
+      border-color: #444;
+      color: white;
+    }
+
+    .search-box .actions button[type="button"]:enabled:hover {
+      background-color: #3e3e3e;
+    }
+  }
 }
