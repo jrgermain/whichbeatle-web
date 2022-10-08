@@ -1,0 +1,15 @@
+.results {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 2em;
+}
+
+@media screen and (min-width: 2000px) {
+  .results {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+.no-results {
+  text-align: center;
+}

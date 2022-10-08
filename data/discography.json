@@ -1,0 +1,1238 @@
+[
+  {
+    "title": "I Saw Her Standing There",
+    "composer": "McCartney",
+    "singer": "McCartney",
+    "album": "Please Please Me"
+  },
+  {
+    "title": "Misery",
+    "composer": "Lennon/McCartney",
+    "singer": "Lennon/McCartney",
+    "album": "Please Please Me"
+  },
+  {
+    "title": "Anna (Go to Him)",
+    "composer": "Alexander",
+    "singer": "Lennon",
+    "album": "Please Please Me"
+  },
+  {
+    "title": "Chains",
+    "composer": "Goffin/King",
+    "singer": "Harrison",
+    "album": "Please Please Me"
+  },
+  {
+    "title": "Boys",
+    "composer": "Dixon/Farrell",
+    "singer": "Starr",
+    "album": "Please Please Me"
+  },
+  {
+    "title": "Ask Me Why",
+    "composer": "Lennon",
+    "singer": "Lennon",
+    "album": "Please Please Me"
+  },
+  {
+    "title": "Please Please Me",
+    "composer": "Lennon",
+    "singer": "Lennon/McCartney",
+    "album": "Please Please Me"
+  },
+  {
+    "title": "Love Me Do",
+    "composer": "McCartney",
+    "singer": "Lennon/McCartney",
+    "album": "Please Please Me"
+  },
+  {
+    "title": "P.S. I Love You",
+    "composer": "McCartney",
+    "singer": "McCartney",
+    "album": "Please Please Me"
+  },
+  {
+    "title": "Baby It's You",
+    "composer": "David/Williams/Bacharach",
+    "singer": "Lennon",
+    "album": "Please Please Me"
+  },
+  {
+    "title": "Do You Want to Know a Secret",
+    "composer": "Lennon",
+    "singer": "Harrison",
+    "album": "Please Please Me"
+  },
+  {
+    "title": "A Taste of Honey",
+    "composer": "Scott/Marlow",
+    "singer": "McCartney",
+    "album": "Please Please Me"
+  },
+  {
+    "title": "There's a Place",
+    "composer": "Lennon",
+    "singer": "Lennon",
+    "album": "Please Please Me"
+  },
+  {
+    "title": "Twist and Shout",
+    "composer": "Medley/Russel",
+    "singer": "Lennon",
+    "album": "Please Please Me"
+  },
+  {
+    "title": "It Won't Be Long",
+    "composer": "Lennon",
+    "singer": "Lennon",
+    "album": "With The Beatles"
+  },
+  {
+    "title": "All I've Got to Do",
+    "composer": "Lennon",
+    "singer": "Lennon",
+    "album": "With The Beatles"
+  },
+  {
+    "title": "All My Loving",
+    "composer": "McCartney",
+    "singer": "McCartney",
+    "album": "With The Beatles"
+  },
+  {
+    "title": "Don't Bother Me",
+    "composer": "Harrison",
+    "singer": "Harrison",
+    "album": "With The Beatles"
+  },
+  {
+    "title": "Little Child",
+    "composer": "Lennon/McCartney",
+    "singer": "Lennon/McCartney",
+    "album": "With The Beatles"
+  },
+  {
+    "title": "Till There Was You",
+    "composer": "Wilson",
+    "singer": "McCartney",
+    "album": "With The Beatles"
+  },
+  {
+    "title": "Please Mr Postman",
+    "composer": "Holland/Bateman/Garrett/Dobbins/Gorman",
+    "singer": "Lennon",
+    "album": "With The Beatles"
+  },
+  {
+    "title": "Roll Over Beethoven",
+    "composer": "Berry",
+    "singer": "Harrison",
+    "album": "With The Beatles"
+  },
+  {
+    "title": "Hold Me Tight",
+    "composer": "McCartney",
+    "singer": "McCartney",
+    "album": "With The Beatles"
+  },
+  {
+    "title": "You Really Got a Hold on Me",
+    "composer": "Robinson",
+    "singer": "Lennon/Harrison",
+    "album": "With The Beatles"
+  },
+  {
+    "title": "I Wanna Be Your Man",
+    "composer": "Lennon/McCartney",
+    "singer": "Starr",
+    "album": "With The Beatles"
+  },
+  {
+    "title": "Devil in Her Heart",
+    "composer": "Drapkin",
+    "singer": "Harrison",
+    "album": "With The Beatles"
+  },
+  {
+    "title": "Not a Second Time",
+    "composer": "Lennon",
+    "singer": "Lennon",
+    "album": "With The Beatles"
+  },
+  {
+    "title": "Money (That's What I Want)",
+    "composer": "Bradford/Gordy",
+    "singer": "Lennon",
+    "album": "With The Beatles"
+  },
+  {
+    "title": "A Hard Day's Night",
+    "composer": "Lennon",
+    "singer": "Lennon/McCartney",
+    "album": "A Hard Day’s Night"
+  },
+  {
+    "title": "I Should Have Known Better",
+    "composer": "Lennon",
+    "singer": "Lennon",
+    "album": "A Hard Day’s Night"
+  },
+  {
+    "title": "If I Fell",
+    "composer": "Lennon",
+    "singer": "Lennon/McCartney",
+    "album": "A Hard Day’s Night"
+  },
+  {
+    "title": "I'm Happy Just to Dance With You",
+    "composer": "Lennon",
+    "singer": "Harrison",
+    "album": "A Hard Day’s Night"
+  },
+  {
+    "title": "And I Love Her",
+    "composer": "McCartney",
+    "singer": "McCartney",
+    "album": "A Hard Day’s Night"
+  },
+  {
+    "title": "Tell Me Why",
+    "composer": "Lennon",
+    "singer": "Lennon",
+    "album": "A Hard Day’s Night"
+  },
+  {
+    "title": "Can't Buy Me Love",
+    "composer": "McCartney",
+    "singer": "McCartney",
+    "album": "A Hard Day’s Night"
+  },
+  {
+    "title": "Any Time at All",
+    "composer": "Lennon",
+    "singer": "Lennon",
+    "album": "A Hard Day’s Night"
+  },
+  {
+    "title": "I'll Cry Instead",
+    "composer": "Lennon",
+    "singer": "Lennon",
+    "album": "A Hard Day’s Night"
+  },
+  {
+    "title": "Things We Said Today",
+    "composer": "McCartney",
+    "singer": "McCartney",
+    "album": "A Hard Day’s Night"
+  },
+  {
+    "title": "When I Get Home",
+    "composer": "Lennon",
+    "singer": "Lennon",
+    "album": "A Hard Day’s Night"
+  },
+  {
+    "title": "You Can't Do That",
+    "composer": "Lennon",
+    "singer": "Lennon",
+    "album": "A Hard Day’s Night"
+  },
+  {
+    "title": "I'll Be Back",
+    "composer": "Lennon",
+    "singer": "Lennon",
+    "album": "A Hard Day’s Night"
+  },
+  {
+    "title": "No Replay",
+    "composer": "Lennon",
+    "singer": "Lennon",
+    "album": "Beatles For Sale"
+  },
+  {
+    "title": "I'm a Loser",
+    "composer": "Lennon",
+    "singer": "Lennon",
+    "album": "Beatles For Sale"
+  },
+  {
+    "title": "Baby's in Black",
+    "composer": "Lennon/McCartney",
+    "singer": "Lennon/McCartney",
+    "album": "Beatles For Sale"
+  },
+  {
+    "title": "Rock and Roll Music",
+    "composer": "Berry",
+    "singer": "Lennon",
+    "album": "Beatles For Sale"
+  },
+  {
+    "title": "I'll Follow the Sun",
+    "composer": "McCartney",
+    "singer": "McCartney",
+    "album": "Beatles For Sale"
+  },
+  {
+    "title": "Mr Moonlight",
+    "composer": "Johnson",
+    "singer": "Lennon",
+    "album": "Beatles For Sale"
+  },
+  {
+    "title": "Kansas City/Hey, Hey, Hey, Hey",
+    "composer": "Leiber/Stoller/Penniman",
+    "singer": "McCartney",
+    "album": "Beatles For Sale"
+  },
+  {
+    "title": "Eight Days a Week",
+    "composer": "McCartney",
+    "singer": "Lennon/McCartney",
+    "album": "Beatles For Sale"
+  },
+  {
+    "title": "Words of Love",
+    "composer": "Holly",
+    "singer": "Lennon/McCartney",
+    "album": "Beatles For Sale"
+  },
+  {
+    "title": "Honey Don't",
+    "composer": "Perkins",
+    "singer": "Starr",
+    "album": "Beatles For Sale"
+  },
+  {
+    "title": "Every Little Thing",
+    "composer": "McCartney",
+    "singer": "Lennon",
+    "album": "Beatles For Sale"
+  },
+  {
+    "title": "I Don't Want to Spoil the Party",
+    "composer": "Lennon",
+    "singer": "Lennon/Harrison",
+    "album": "Beatles For Sale"
+  },
+  {
+    "title": "What You're Doing",
+    "composer": "McCartney",
+    "singer": "McCartney",
+    "album": "Beatles For Sale"
+  },
+  {
+    "title": "Everybody's Trying to Be My Baby",
+    "composer": "Perkins",
+    "singer": "Harrison",
+    "album": "Beatles For Sale"
+  },
+  {
+    "title": "Help!",
+    "composer": "Lennon",
+    "singer": "Lennon",
+    "album": "Help!"
+  },
+  {
+    "title": "The Night Before",
+    "composer": "McCartney",
+    "singer": "McCartney",
+    "album": "Help!"
+  },
+  {
+    "title": "You've Got to Hide Your Love Away",
+    "composer": "Lennon",
+    "singer": "Lennon",
+    "album": "Help!"
+  },
+  {
+    "title": "I Need You",
+    "composer": "Harrison",
+    "singer": "Harrison",
+    "album": "Help!"
+  },
+  {
+    "title": "Another Girl",
+    "composer": "McCartney",
+    "singer": "McCartney",
+    "album": "Help!"
+  },
+  {
+    "title": "You're Going to Lose That Girl",
+    "composer": "Lennon",
+    "singer": "Lennon",
+    "album": "Help!"
+  },
+  {
+    "title": "Ticket to Ride",
+    "composer": "Lennon",
+    "singer": "Lennon",
+    "album": "Help!"
+  },
+  {
+    "title": "Act Naturally",
+    "composer": "Morrison/Russel",
+    "singer": "Starr",
+    "album": "Help!"
+  },
+  {
+    "title": "It's Only Love",
+    "composer": "Lennon",
+    "singer": "Lennon",
+    "album": "Help!"
+  },
+  {
+    "title": "You Like Me Too Much",
+    "composer": "Harrison",
+    "singer": "Harrison",
+    "album": "Help!"
+  },
+  {
+    "title": "Tell Me What You See",
+    "composer": "McCartney",
+    "singer": "McCartney",
+    "album": "Help!"
+  },
+  {
+    "title": "I've Just Seen a Face",
+    "composer": "McCartney",
+    "singer": "McCartney",
+    "album": "Help!"
+  },
+  {
+    "title": "Yesterday",
+    "composer": "McCartney",
+    "singer": "McCartney",
+    "album": "Help!"
+  },
+  {
+    "title": "Dizzy Miss Lizzy",
+    "composer": "Williams",
+    "singer": "Lennon",
+    "album": "Help!"
+  },
+  {
+    "title": "Drive My Car",
+    "composer": "McCartney",
+    "singer": "Lennon/McCartney",
+    "album": "Rubber Soul"
+  },
+  {
+    "title": "Norwegian Wood (This Bird Has Flown)",
+    "composer": "Lennon",
+    "singer": "Lennon",
+    "album": "Rubber Soul"
+  },
+  {
+    "title": "You Won't See Me",
+    "composer": "McCartney",
+    "singer": "McCartney",
+    "album": "Rubber Soul"
+  },
+  {
+    "title": "Nowhere Man",
+    "composer": "Lennon",
+    "singer": "Lennon",
+    "album": "Rubber Soul"
+  },
+  {
+    "title": "Think for Yourself",
+    "composer": "Harrison",
+    "singer": "Harrison",
+    "album": "Rubber Soul"
+  },
+  {
+    "title": "The Word",
+    "composer": "Lennon/McCartney",
+    "singer": "Lennon/McCartney",
+    "album": "Rubber Soul"
+  },
+  {
+    "title": "Michelle",
+    "composer": "McCartney",
+    "singer": "McCartney",
+    "album": "Rubber Soul"
+  },
+  {
+    "title": "What Goes On",
+    "composer": "Lennon/McCartney",
+    "singer": "Starr",
+    "album": "Rubber Soul"
+  },
+  {
+    "title": "Girl",
+    "composer": "Lennon",
+    "singer": "Lennon",
+    "album": "Rubber Soul"
+  },
+  {
+    "title": "I'm Looking Through You",
+    "composer": "McCartney",
+    "singer": "McCartney",
+    "album": "Rubber Soul"
+  },
+  {
+    "title": "In My Life",
+    "composer": "Lennon/McCartney",
+    "singer": "Lennon",
+    "album": "Rubber Soul"
+  },
+  {
+    "title": "Wait",
+    "composer": "Lennon/McCartney",
+    "singer": "Lennon/McCartney",
+    "album": "Rubber Soul"
+  },
+  {
+    "title": "If I Need Someone",
+    "composer": "Harrison",
+    "singer": "Harrison",
+    "album": "Rubber Soul"
+  },
+  {
+    "title": "Run for Your Life",
+    "composer": "Lennon",
+    "singer": "Lennon",
+    "album": "Rubber Soul"
+  },
+  {
+    "title": "Taxman",
+    "composer": "Harrison",
+    "singer": "Harrison",
+    "album": "Revolver"
+  },
+  {
+    "title": "Eleanor Rigby",
+    "composer": "McCartney",
+    "singer": "McCartney",
+    "album": "Revolver"
+  },
+  {
+    "title": "I'm Only Sleeping",
+    "composer": "Lennon",
+    "singer": "Lennon",
+    "album": "Revolver"
+  },
+  {
+    "title": "Love You To",
+    "composer": "Harrison",
+    "singer": "Harrison",
+    "album": "Revolver"
+  },
+  {
+    "title": "Here, There and Everywhere",
+    "composer": "McCartney",
+    "singer": "McCartney",
+    "album": "Revolver"
+  },
+  {
+    "title": "Yellow Submarine",
+    "composer": "McCartney",
+    "singer": "Starr",
+    "album": "Revolver"
+  },
+  {
+    "title": "She Said She Said",
+    "composer": "Lennon",
+    "singer": "Lennon",
+    "album": "Revolver"
+  },
+  {
+    "title": "Good Day Sunshine",
+    "composer": "McCartney",
+    "singer": "McCartney",
+    "album": "Revolver"
+  },
+  {
+    "title": "And Your Bird Can Sing",
+    "composer": "Lennon",
+    "singer": "Lennon",
+    "album": "Revolver"
+  },
+  {
+    "title": "For No One",
+    "composer": "McCartney",
+    "singer": "McCartney",
+    "album": "Revolver"
+  },
+  {
+    "title": "Doctor Robert",
+    "composer": "Lennon",
+    "singer": "Lennon",
+    "album": "Revolver"
+  },
+  {
+    "title": "I Want to Tell You",
+    "composer": "Harrison",
+    "singer": "Harrison",
+    "album": "Revolver"
+  },
+  {
+    "title": "Got to Get You Into My Life",
+    "composer": "McCartney",
+    "singer": "McCartney",
+    "album": "Revolver"
+  },
+  {
+    "title": "Tomorrow Never Knows",
+    "composer": "Lennon",
+    "singer": "Lennon",
+    "album": "Revolver"
+  },
+  {
+    "title": "Sgt. Pepper's Lonely Hearts Club Band",
+    "composer": "McCartney",
+    "singer": "McCartney",
+    "album": "Sgt. Pepper’s Lonely Hearts Club Band"
+  },
+  {
+    "title": "With a Little Help From My Friends",
+    "composer": "McCartney",
+    "singer": "Starr",
+    "album": "Sgt. Pepper’s Lonely Hearts Club Band"
+  },
+  {
+    "title": "Lucy in the Sky with Diamonds",
+    "composer": "Lennon",
+    "singer": "Lennon",
+    "album": "Sgt. Pepper’s Lonely Hearts Club Band"
+  },
+  {
+    "title": "Getting Better",
+    "composer": "McCartney",
+    "singer": "McCartney",
+    "album": "Sgt. Pepper’s Lonely Hearts Club Band"
+  },
+  {
+    "title": "Fixing a Hole",
+    "composer": "McCartney",
+    "singer": "McCartney",
+    "album": "Sgt. Pepper’s Lonely Hearts Club Band"
+  },
+  {
+    "title": "She's Leaving Home",
+    "composer": "McCartney",
+    "singer": "McCartney",
+    "album": "Sgt. Pepper’s Lonely Hearts Club Band"
+  },
+  {
+    "title": "Being For the Benefit of Mr. Kite",
+    "composer": "Lennon",
+    "singer": "Lennon",
+    "album": "Sgt. Pepper’s Lonely Hearts Club Band"
+  },
+  {
+    "title": "Within You Without You",
+    "composer": "Harrison",
+    "singer": "Harrison",
+    "album": "Sgt. Pepper’s Lonely Hearts Club Band"
+  },
+  {
+    "title": "When I'm 64",
+    "composer": "McCartney",
+    "singer": "McCartney",
+    "album": "Sgt. Pepper’s Lonely Hearts Club Band"
+  },
+  {
+    "title": "Lovely Rita",
+    "composer": "McCartney",
+    "singer": "McCartney",
+    "album": "Sgt. Pepper’s Lonely Hearts Club Band"
+  },
+  {
+    "title": "Good Morning Good Morning",
+    "composer": "Lennon",
+    "singer": "Lennon",
+    "album": "Sgt. Pepper’s Lonely Hearts Club Band"
+  },
+  {
+    "title": "Sgt. Pepper's Lonely Hearts Club Band (Reprise)",
+    "composer": "McCartney",
+    "singer": "Lennon/McCartney/Harrison/Starr",
+    "album": "Sgt. Pepper’s Lonely Hearts Club Band"
+  },
+  {
+    "title": "A Day in the Life",
+    "composer": "Lennon/McCartney",
+    "singer": "Lennon/McCartney",
+    "album": "Sgt. Pepper’s Lonely Hearts Club Band"
+  },
+  {
+    "title": "Magical Mystery Tour",
+    "composer": "McCartney",
+    "singer": "McCartney",
+    "album": "Magical Mystery Tour"
+  },
+  {
+    "title": "The Fool on the Hill",
+    "composer": "McCartney",
+    "singer": "McCartney",
+    "album": "Magical Mystery Tour"
+  },
+  {
+    "title": "Flying",
+    "composer": "Lennon/McCartney/Harrison/Starr",
+    "singer": "",
+    "album": "Magical Mystery Tour"
+  },
+  {
+    "title": "Blue Jay Way",
+    "composer": "Harrison",
+    "singer": "Harrison",
+    "album": "Magical Mystery Tour"
+  },
+  {
+    "title": "Your Mother Should Know",
+    "composer": "McCartney",
+    "singer": "McCartney",
+    "album": "Magical Mystery Tour"
+  },
+  {
+    "title": "I Am the Walrus",
+    "composer": "Lennon",
+    "singer": "Lennon",
+    "album": "Magical Mystery Tour"
+  },
+  {
+    "title": "Hello, Goodbye",
+    "composer": "McCartney",
+    "singer": "McCartney",
+    "album": "Magical Mystery Tour"
+  },
+  {
+    "title": "Strawberry Fields Forever",
+    "composer": "Lennon",
+    "singer": "Lennon",
+    "album": "Magical Mystery Tour"
+  },
+  {
+    "title": "Penny Lane",
+    "composer": "McCartney",
+    "singer": "McCartney",
+    "album": "Magical Mystery Tour"
+  },
+  {
+    "title": "Baby You’re a Rich Man",
+    "composer": "Lennon/McCartney",
+    "singer": "Lennon/McCartney",
+    "album": "Magical Mystery Tour"
+  },
+  {
+    "title": "All You Need Is Love",
+    "composer": "Lennon",
+    "singer": "Lennon",
+    "album": "Magical Mystery Tour"
+  },
+  {
+    "title": "Back in the USSR",
+    "composer": "McCartney",
+    "singer": "McCartney",
+    "album": "The Beatles (White Album)"
+  },
+  {
+    "title": "Dear Prudence",
+    "composer": "Lennon",
+    "singer": "Lennon",
+    "album": "The Beatles (White Album)"
+  },
+  {
+    "title": "Glass Onion",
+    "composer": "Lennon",
+    "singer": "Lennon",
+    "album": "The Beatles (White Album)"
+  },
+  {
+    "title": "Ob-la-di, Ob-la-da",
+    "composer": "McCartney",
+    "singer": "McCartney",
+    "album": "The Beatles (White Album)"
+  },
+  {
+    "title": "Wild Honey Pie",
+    "composer": "McCartney",
+    "singer": "McCartney",
+    "album": "The Beatles (White Album)"
+  },
+  {
+    "title": "The Continuing Story of Bungalow Bill",
+    "composer": "Lennon",
+    "singer": "Lennon",
+    "album": "The Beatles (White Album)"
+  },
+  {
+    "title": "While My Guitar Gently Weeps",
+    "composer": "Harrison",
+    "singer": "Harrison",
+    "album": "The Beatles (White Album)"
+  },
+  {
+    "title": "Happiness is a Warm Gun",
+    "composer": "Lennon",
+    "singer": "Lennon",
+    "album": "The Beatles (White Album)"
+  },
+  {
+    "title": "Martha My Dear",
+    "composer": "McCartney",
+    "singer": "McCartney",
+    "album": "The Beatles (White Album)"
+  },
+  {
+    "title": "I'm So Tired",
+    "composer": "Lennon",
+    "singer": "Lennon",
+    "album": "The Beatles (White Album)"
+  },
+  {
+    "title": "Blackbird",
+    "composer": "McCartney",
+    "singer": "McCartney",
+    "album": "The Beatles (White Album)"
+  },
+  {
+    "title": "Piggies",
+    "composer": "Harrison",
+    "singer": "Harrison",
+    "album": "The Beatles (White Album)"
+  },
+  {
+    "title": "Rocky Raccoon",
+    "composer": "McCartney",
+    "singer": "McCartney",
+    "album": "The Beatles (White Album)"
+  },
+  {
+    "title": "Don't Pass Me By",
+    "composer": "Starr",
+    "singer": "Starr",
+    "album": "The Beatles (White Album)"
+  },
+  {
+    "title": "Why Don't We Do It in the Road?",
+    "composer": "McCartney",
+    "singer": "McCartney",
+    "album": "The Beatles (White Album)"
+  },
+  {
+    "title": "I Will",
+    "composer": "McCartney",
+    "singer": "McCartney",
+    "album": "The Beatles (White Album)"
+  },
+  {
+    "title": "Julia",
+    "composer": "Lennon",
+    "singer": "Lennon",
+    "album": "The Beatles (White Album)"
+  },
+  {
+    "title": "Birthday",
+    "composer": "McCartney",
+    "singer": "Lennon/McCartney",
+    "album": "The Beatles (White Album)"
+  },
+  {
+    "title": "Yer Blues",
+    "composer": "Lennon",
+    "singer": "Lennon",
+    "album": "The Beatles (White Album)"
+  },
+  {
+    "title": "Mother Nature's Son",
+    "composer": "McCartney",
+    "singer": "McCartney",
+    "album": "The Beatles (White Album)"
+  },
+  {
+    "title": "Everybody's Got Something to Hide Except Me and My Monkey",
+    "composer": "Lennon",
+    "singer": "Lennon",
+    "album": "The Beatles (White Album)"
+  },
+  {
+    "title": "Sexy Sadie",
+    "composer": "Lennon",
+    "singer": "Lennon",
+    "album": "The Beatles (White Album)"
+  },
+  {
+    "title": "Helter Skelter",
+    "composer": "McCartney",
+    "singer": "McCartney",
+    "album": "The Beatles (White Album)"
+  },
+  {
+    "title": "Long Long Long",
+    "composer": "Harrison",
+    "singer": "Harrison",
+    "album": "The Beatles (White Album)"
+  },
+  {
+    "title": "Revolution 1",
+    "composer": "Lennon",
+    "singer": "Lennon",
+    "album": "The Beatles (White Album)"
+  },
+  {
+    "title": "Honey Pie",
+    "composer": "McCartney",
+    "singer": "McCartney",
+    "album": "The Beatles (White Album)"
+  },
+  {
+    "title": "Savoy Truffle",
+    "composer": "Harrison",
+    "singer": "Harrison",
+    "album": "The Beatles (White Album)"
+  },
+  {
+    "title": "Cry Baby Cry",
+    "composer": "Lennon",
+    "singer": "Lennon",
+    "album": "The Beatles (White Album)"
+  },
+  {
+    "title": "Revolution #9",
+    "composer": "Lennon",
+    "singer": "",
+    "album": "The Beatles (White Album)"
+  },
+  {
+    "title": "Good Night",
+    "composer": "Lennon",
+    "singer": "Starr",
+    "album": "The Beatles (White Album)"
+  },
+  {
+    "title": "Yellow Submarine",
+    "composer": "McCartney",
+    "singer": "Starr",
+    "album": "Yellow Submarine"
+  },
+  {
+    "title": "Only a Nothern Song",
+    "composer": "Harrison",
+    "singer": "Harrison",
+    "album": "Yellow Submarine"
+  },
+  {
+    "title": "All Together Now",
+    "composer": "McCartney",
+    "singer": "McCartney",
+    "album": "Yellow Submarine"
+  },
+  {
+    "title": "Hey Bulldog",
+    "composer": "Lennon/McCartney",
+    "singer": "Lennon",
+    "album": "Yellow Submarine"
+  },
+  {
+    "title": "It's All Too Much",
+    "composer": "Harrison",
+    "singer": "Harrison",
+    "album": "Yellow Submarine"
+  },
+  {
+    "title": "All You Need is Love",
+    "composer": "Lennon",
+    "singer": "Lennon",
+    "album": "Yellow Submarine"
+  },
+  {
+    "title": "Come Together",
+    "composer": "Lennon",
+    "singer": "Lennon",
+    "album": "Abbey Road"
+  },
+  {
+    "title": "Something",
+    "composer": "Harrison",
+    "singer": "Harrison",
+    "album": "Abbey Road"
+  },
+  {
+    "title": "Maxwell's Silver Hammer",
+    "composer": "McCartney",
+    "singer": "McCartney",
+    "album": "Abbey Road"
+  },
+  {
+    "title": "Oh! Darling",
+    "composer": "McCartney",
+    "singer": "McCartney",
+    "album": "Abbey Road"
+  },
+  {
+    "title": "Octopus's Garden",
+    "composer": "Starr",
+    "singer": "Starr",
+    "album": "Abbey Road"
+  },
+  {
+    "title": "I Want You (She's So Heavy)",
+    "composer": "Lennon",
+    "singer": "Lennon",
+    "album": "Abbey Road"
+  },
+  {
+    "title": "Here Comes the Sun",
+    "composer": "Harrison",
+    "singer": "Harrison",
+    "album": "Abbey Road"
+  },
+  {
+    "title": "Because",
+    "composer": "Lennon",
+    "singer": "Lennon/McCartney/Harrison",
+    "album": "Abbey Road"
+  },
+  {
+    "title": "You Never Give Me Your Money",
+    "composer": "McCartney",
+    "singer": "McCartney",
+    "album": "Abbey Road"
+  },
+  {
+    "title": "Sun King",
+    "composer": "Lennon",
+    "singer": "Lennon",
+    "album": "Abbey Road"
+  },
+  {
+    "title": "Mean Mr Mustard",
+    "composer": "Lennon",
+    "singer": "Lennon",
+    "album": "Abbey Road"
+  },
+  {
+    "title": "Polythene Pam",
+    "composer": "Lennon",
+    "singer": "Lennon",
+    "album": "Abbey Road"
+  },
+  {
+    "title": "She Came in Through the Bathroom Window",
+    "composer": "McCartney",
+    "singer": "McCartney",
+    "album": "Abbey Road"
+  },
+  {
+    "title": "Golden Slumbers",
+    "composer": "McCartney",
+    "singer": "McCartney",
+    "album": "Abbey Road"
+  },
+  {
+    "title": "Carry That Weight",
+    "composer": "McCartney",
+    "singer": "McCartney",
+    "album": "Abbey Road"
+  },
+  {
+    "title": "The End",
+    "composer": "McCartney",
+    "singer": "McCartney",
+    "album": "Abbey Road"
+  },
+  {
+    "title": "Her Majesty",
+    "composer": "McCartney",
+    "singer": "McCartney",
+    "album": "Abbey Road"
+  },
+  {
+    "title": "Two of Us",
+    "composer": "McCartney",
+    "singer": "Lennon/McCartney",
+    "album": "Let It Be"
+  },
+  {
+    "title": "Dig a Pony",
+    "composer": "Lennon",
+    "singer": "Lennon",
+    "album": "Let It Be"
+  },
+  {
+    "title": "Across the Universe",
+    "composer": "Lennon",
+    "singer": "Lennon",
+    "album": "Let It Be"
+  },
+  {
+    "title": "I Me Mine",
+    "composer": "Harrison",
+    "singer": "Harrison",
+    "album": "Let It Be"
+  },
+  {
+    "title": "Dig It",
+    "composer": "Lennon",
+    "singer": "Lennon",
+    "album": "Let It Be"
+  },
+  {
+    "title": "Let It Be",
+    "composer": "McCartney",
+    "singer": "McCartney",
+    "album": "Let It Be"
+  },
+  {
+    "title": "Maggie Mae",
+    "composer": "Trad.",
+    "singer": "Lennon/McCartney",
+    "album": "Let It Be"
+  },
+  {
+    "title": "I've Got a Feeling",
+    "composer": "Lennon/McCartney",
+    "singer": "Lennon/McCartney",
+    "album": "Let It Be"
+  },
+  {
+    "title": "One After 909",
+    "composer": "Lennon",
+    "singer": "Lennon/McCartney",
+    "album": "Let It Be"
+  },
+  {
+    "title": "The Long and Winding Road",
+    "composer": "McCartney",
+    "singer": "McCartney",
+    "album": "Let It Be"
+  },
+  {
+    "title": "For You Blue",
+    "composer": "Harrison",
+    "singer": "Harrison",
+    "album": "Let It Be"
+  },
+  {
+    "title": "Get Back",
+    "composer": "McCartney",
+    "singer": "McCartney",
+    "album": "Let It Be"
+  },
+  {
+    "title": "Thank You Girl",
+    "composer": "Lennon/McCartney",
+    "singer": "Lennon",
+    "album": ""
+  },
+  {
+    "title": "I'll Get You",
+    "composer": "Lennon/McCartney",
+    "singer": "Lennon/McCartney",
+    "album": ""
+  },
+  {
+    "title": "This Boy",
+    "composer": "Lennon",
+    "singer": "Lennon/McCartney/Harrison",
+    "album": ""
+  },
+  {
+    "title": "Long Tall Sally",
+    "composer": "Johnson/Penniman/Blackwell",
+    "singer": "McCartney",
+    "album": ""
+  },
+  {
+    "title": "I Call Your Name",
+    "composer": "Lennon",
+    "singer": "Lennon",
+    "album": ""
+  },
+  {
+    "title": "Matchbox",
+    "composer": "Perkins",
+    "singer": "Starr",
+    "album": ""
+  },
+  {
+    "title": "Slow Down",
+    "composer": "Williams",
+    "singer": "Lennon",
+    "album": ""
+  },
+  {
+    "title": "She's a Woman",
+    "composer": "McCartney",
+    "singer": "McCartney",
+    "album": ""
+  },
+  {
+    "title": "Yes it is",
+    "composer": "Lennon",
+    "singer": "Lennon",
+    "album": ""
+  },
+  {
+    "title": "I'm Down",
+    "composer": "McCartney",
+    "singer": "McCartney",
+    "album": ""
+  },
+  {
+    "title": "Rain",
+    "composer": "Lennon",
+    "singer": "Lennon",
+    "album": ""
+  },
+  {
+    "title": "The Inner Light",
+    "composer": "Harrison",
+    "singer": "Harrison",
+    "album": ""
+  },
+  {
+    "title": "Lady Madonna",
+    "composer": "McCartney",
+    "singer": "McCartney",
+    "album": ""
+  },
+  {
+    "title": "Revolution",
+    "composer": "Lennon",
+    "singer": "Lennon",
+    "album": ""
+  },
+  {
+    "title": "Hey Jude",
+    "composer": "McCartney",
+    "singer": "McCartney",
+    "album": ""
+  },
+  {
+    "title": "Don't Let Me Down",
+    "composer": "Lennon",
+    "singer": "Lennon",
+    "album": ""
+  },
+  {
+    "title": "The Ballad of John and Yoko",
+    "composer": "Lennon",
+    "singer": "Lennon",
+    "album": ""
+  },
+  {
+    "title": "Old Brown Shoe",
+    "composer": "Harrison",
+    "singer": "Harrison",
+    "album": ""
+  },
+  {
+    "title": "You Know My Name (Look up the Number)",
+    "composer": "Lennon",
+    "singer": "Lennon/McCartney/Starr",
+    "album": ""
+  },
+  {
+    "title": "I Want to Hold Your Hand",
+    "composer": "Lennon/McCartney",
+    "singer": "Lennon/McCartney",
+    "album": ""
+  }
+]
