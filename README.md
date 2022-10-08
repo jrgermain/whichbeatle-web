@@ -11,9 +11,7 @@ Since then, I developed an interest in web development, so I created a web versi
 - A dark theme that is automatically used when the user is using dark mode on their device
 - [Responsive design](https://developer.mozilla.org/en-US/docs/Learn/CSS/CSS_layout/Responsive_Design)
 - Embedded YouTube videos for the songs the user looks up
-- Infrastructure as Code (IaC) with Terraform
-- GitHub Actions integration
-- Modern, fun technologies like TypeScript and Vite
+- Modern, fun technologies like TypeScript and Next.js
 
 ## See it in action
 
