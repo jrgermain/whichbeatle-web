@@ -12,6 +12,7 @@ Since then, I developed an interest in web development, so I created a web versi
 - [Responsive design](https://developer.mozilla.org/en-US/docs/Learn/CSS/CSS_layout/Responsive_Design)
 - Embedded YouTube videos for the songs the user looks up
 - Modern, fun technologies like TypeScript and Next.js
+- [Progressive Enhancement](https://developer.mozilla.org/en-US/docs/Glossary/Progressive_Enhancement), including support for browsers with JavaScript disabled
 
 ## See it in action
 
