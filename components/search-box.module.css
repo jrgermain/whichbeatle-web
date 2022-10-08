@@ -88,8 +88,8 @@
 
 /* On small screens, move the buttons outside the search box to save horizontal space */
 @media screen and (max-width: 800px) {
-  #search {
-    margin-bottom: 4rem;
+  .search-box {
+    margin-bottom: 4em;
   }
 
   .search-box input {
@@ -133,19 +133,21 @@
   .search-box .actions button[type="button"]:enabled:hover {
     background-color: #e3e3e3;
   }
+
+  @media (prefers-color-scheme: dark) {
+    .search-box .actions button[type="button"] {
+      background-color: #333;
+      border-color: #444;
+    }
+
+    .search-box .actions button[type="button"]:enabled:hover {
+      background-color: #3f3f3f;
+    }
+  }
 }
 
 @media (prefers-color-scheme: dark) {
-  .search-box .actions button[type="button"] {
-    background-color: #333;
-    border-color: #444;
-  }
-
-  .search-box .actions button[type="button"]:enabled:hover {
-    background-color: #3e3e3e;
-  }
-
   .search-box .actions button[type="button"] img {
-    filter: invert(1);
+    filter: invert();
   }
 }

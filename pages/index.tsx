@@ -4,12 +4,14 @@ import SearchBox from "../components/search-box";
 
 const Home: NextPage = () => {
   return (
-    <div>
+    <>
       <Head>
         <title>Which Beatle?</title>
       </Head>
-      <SearchBox />
-    </div>
+      <main>
+        <SearchBox />
+      </main>
+    </>
   );
 };
 

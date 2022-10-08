@@ -25,7 +25,6 @@ const SearchBox = ({ defaultValue }: SearchBoxProps) => {
         <div className={styles["search-box"]}>
           <input
             type="text"
-            id="song-name"
             name="song"
             placeholder="Search for a Beatles song"
             aria-label="Song Name"
@@ -47,7 +46,7 @@ const SearchBox = ({ defaultValue }: SearchBoxProps) => {
                 alt=""
               />
             </button>
-            <button type="submit" id="go" title="Go">
+            <button type="submit" title="Go">
               <Image
                 src="/images/go.svg"
                 height={24}

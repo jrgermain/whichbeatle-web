@@ -23,35 +23,41 @@ const SearchResult = ({
     <div className={styles.details}>
       <h1 className={styles.song}>{title}</h1>
       <span className={styles.album}>
-        <Image
-          className={styles.icon}
-          src="/images/album.svg"
-          alt=""
-          width={48}
-          height={48}
-        />
+        <span className={styles["icon-container"]}>
+          <Image
+            className={styles.icon}
+            src="/images/album.svg"
+            alt=""
+            width={48}
+            height={48}
+          />
+        </span>
         <span className={styles.label}>Album</span>
         <span className={styles["album-name"]}>{album}</span>
       </span>
       <span className={styles.singer}>
-        <Image
-          className={styles.icon}
-          src="/images/singer.svg"
-          alt=""
-          width={48}
-          height={48}
-        />
+        <span className={styles["icon-container"]}>
+          <Image
+            className={styles.icon}
+            src="/images/singer.svg"
+            alt=""
+            width={48}
+            height={48}
+          />
+        </span>
         <span className={styles.label}>Singer</span>
         <span className={styles["singer-name"]}>{singer}</span>
       </span>
       <span className={styles.composer}>
-        <Image
-          className={styles.icon}
-          src="/images/composer.svg"
-          alt=""
-          width={48}
-          height={48}
-        />
+        <span className={styles["icon-container"]}>
+          <Image
+            className={styles.icon}
+            src="/images/composer.svg"
+            alt=""
+            width={48}
+            height={48}
+          />
+        </span>
         <span className={styles.label}>Composer</span>
         <span className={styles["composer-name"]}>{composer}</span>
       </span>

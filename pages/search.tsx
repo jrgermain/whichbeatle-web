@@ -15,19 +15,21 @@ type SearchProps = {
 
 const Search: NextPage<SearchProps> = ({ song, results }) => {
   return (
-    <div>
+    <>
       <Head>
         <title>Search - Which Beatle?</title>
       </Head>
-      <SearchBox defaultValue={song?.toString()} />
-      <div className={styles.results}>
-        {results.length ? (
-          results.map((result, i) => <SearchResult key={i} {...result} />)
-        ) : (
-          <span className={styles["no-results"]}>No results found</span>
-        )}
-      </div>
-    </div>
+      <main>
+        <SearchBox defaultValue={song?.toString()} />
+        <div className={styles.results}>
+          {results.length ? (
+            results.map((result, i) => <SearchResult key={i} {...result} />)
+          ) : (
+            <span className={styles["no-results"]}>No results found</span>
+          )}
+        </div>
+      </main>
+    </>
   );
 };
 
