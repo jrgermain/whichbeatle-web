@@ -21,12 +21,14 @@ function isMatch(query: string, value: string) {
 }
 
 type FindAllQuery = Partial<Record<keyof Song, string[]>>;
+
 export function findAll(query: FindAllQuery): Song[] {
-  const entries = Object.entries(query) as Entries<FindAllQuery>;
+  const filters = Object.entries(query) as Entries<FindAllQuery>;
   return discography.filter((song) =>
-    entries.every(
+    filters.every(
       ([field, values]) =>
-        !values || values.some((value) => value && isMatch(value, song[field]))
+        !values?.length || // Filter was not provided or has no value, so don't filter by that field
+        values.some((value) => value && isMatch(value, song[field]))
     )
   );
 }
