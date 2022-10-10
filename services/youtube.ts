@@ -11,7 +11,7 @@ export const getVideoUrl = async (songTitle: string) => {
         method: "GET",
       }
     );
-    const json = (await response.json()) as any;
+    const json = await response.json();
     const id = json.items[0]?.id?.videoId;
     return id ? `https://www.youtube.com/embed/${id}` : null;
   } catch (e) {

@@ -1,0 +1,21 @@
+.content {
+  background-color: var(--result-bg);
+  color: var(--result-fg);
+  padding: 2em;
+  border-radius: 5px;
+  width: min(90%, 900px);
+  margin: 1em auto;
+  box-shadow: 0 2px 6px 0 var(--shadow-color);
+}
+
+.content > :first-child {
+  margin-top: 0;
+}
+
+.content > :last-child {
+  margin-bottom: 0;
+}
+
+.content p {
+  line-height: 1.25;
+}

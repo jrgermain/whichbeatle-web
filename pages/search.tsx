@@ -9,7 +9,7 @@ import styles from "./search.module.css";
 
 type SongWithVideoUrl = Song & { videoUrl: string | null };
 type SearchProps = {
-  song: string | undefined;
+  song: string | null;
   results: SongWithVideoUrl[];
 };
 
@@ -21,13 +21,15 @@ const Search: NextPage<SearchProps> = ({ song, results }) => {
       </Head>
       <main>
         <SearchBox defaultValue={song?.toString()} />
-        <div className={styles.results}>
-          {results.length ? (
-            results.map((result, i) => <SearchResult key={i} {...result} />)
-          ) : (
-            <span className={styles["no-results"]}>No results found</span>
-          )}
-        </div>
+        {song != null && (
+          <div className={styles.results}>
+            {results.length ? (
+              results.map((result, i) => <SearchResult key={i} {...result} />)
+            ) : (
+              <span className={styles["no-results"]}>No results found</span>
+            )}
+          </div>
+        )}
       </main>
     </>
   );
@@ -41,7 +43,7 @@ export const getServerSideProps: GetServerSideProps<SearchProps> = async ({
 
   if (!song) {
     return {
-      props: { song, results: [] },
+      props: { song: null, results: [] },
     };
   }
 

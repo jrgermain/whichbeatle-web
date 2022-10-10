@@ -1,6 +1,7 @@
 import Image from "next/image";
 import Link from "next/link";
 import styles from "./global-header.module.css";
+import NavLink from "./nav-link";
 
 const GlobalHeader = () => (
   <header className={styles.header}>
@@ -16,6 +17,13 @@ const GlobalHeader = () => (
         <span className="sr-only">Home</span>
       </a>
     </Link>
+    <nav>
+      <NavLink href="/" isExact>
+        Home
+      </NavLink>
+      <NavLink href="/about">About</NavLink>
+      <NavLink href="/rest-api">API</NavLink>
+    </nav>
   </header>
 );
 

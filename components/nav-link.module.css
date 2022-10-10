@@ -1,0 +1,27 @@
+.link {
+  font-size: 1.2rem;
+  margin: 0.5em;
+  text-decoration: none;
+  font-weight: 700;
+  color: inherit;
+  padding: 0.7em;
+  border-radius: 10px;
+  min-width: 2em;
+  text-align: center;
+  position: relative;
+  transition: background-color 0.4s ease;
+}
+
+.link:hover {
+  background-color: #9993;
+  text-decoration: none;
+}
+
+.link:active {
+  background-color: #9995;
+}
+
+.link[aria-current="page"] {
+  color: var(--theme-color);
+  font-weight: 800;
+}

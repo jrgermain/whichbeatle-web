@@ -1,0 +1,14 @@
+.logo {
+  text-align: center;
+}
+
+.slogan {
+  opacity: 0.5;
+  text-align: center;
+  font-size: 1.2em;
+  margin-top: 0.5em;
+  margin-bottom: 1em;
+  font-style: italic;
+  border-bottom: 1px dashed gray;
+  padding-bottom: 1em;
+}
