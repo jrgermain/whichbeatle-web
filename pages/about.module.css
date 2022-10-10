@@ -12,3 +12,9 @@
   border-bottom: 1px dashed gray;
   padding-bottom: 1em;
 }
+
+@media (prefers-color-scheme: dark) {
+  .logo {
+    filter: invert();
+  }
+}
