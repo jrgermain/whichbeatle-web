@@ -1,28 +1,15 @@
 import { getVideoUrl } from "./youtube";
+import fetchMock, { enableFetchMocks } from "jest-fetch-mock";
+
+enableFetchMocks();
 
 describe("getVideoUrl", () => {
-  let _fetch: typeof fetch;
-
   beforeAll(() => {
     process.env.YOUTUBE_API_KEY = "abcdefg";
-    _fetch = globalThis.fetch;
-    globalThis.fetch = jest.fn().mockResolvedValue({
-      async json() {
-        return {
-          items: [
-            {
-              id: {
-                videoId: "1234567",
-              },
-            },
-          ],
-        };
-      },
-    });
   });
   it("calls fetch with the correct parameters", async () => {
     await getVideoUrl("Something");
-    const lastCall = jest.mocked(fetch).mock.calls.at(-1);
+    const lastCall = fetchMock.mock.calls.at(-1);
     expect(lastCall).toBeDefined();
 
     // eslint-disable-next-line @typescript-eslint/no-non-null-assertion
@@ -41,30 +28,38 @@ describe("getVideoUrl", () => {
   });
 
   it("returns the id if there was a result", async () => {
+    fetchMock.mockResponseOnce(
+      JSON.stringify({
+        items: [
+          {
+            id: {
+              videoId: "1234567",
+            },
+          },
+        ],
+      })
+    );
     const url = await getVideoUrl("Something");
     expect(url).toBe("https://www.youtube.com/embed/1234567");
   });
 
   it("returns null if there were no results", async () => {
-    jest.mocked(fetch).mockResolvedValueOnce({
-      async json() {
-        return {
-          items: [],
-        };
-      },
-    } as Response);
+    fetchMock.mockResponseOnce(
+      JSON.stringify({
+        items: [],
+      })
+    );
     const url = await getVideoUrl("Something");
     expect(url).toBeNull();
   });
 
   it("returns null if there was an error", async () => {
-    jest.mocked(fetch).mockRejectedValueOnce({});
+    fetchMock.mockRejectedValueOnce({});
     const url = await getVideoUrl("Something");
     expect(url).toBeNull();
   });
 
   afterAll(() => {
     delete process.env.YOUTUBE_API_KEY;
-    globalThis.fetch = _fetch;
   });
 });
