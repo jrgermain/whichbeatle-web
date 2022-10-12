@@ -6,7 +6,7 @@ import NavLink from "./nav-link";
 const GlobalHeader = () => (
   <header className={styles.header}>
     <Link href="/">
-      <a>
+      <a data-testid="home-link">
         <Image
           className={styles.logo}
           src="/images/logo.png"

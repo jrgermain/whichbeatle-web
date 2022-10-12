@@ -30,6 +30,7 @@ const SearchBox = ({ defaultValue }: SearchBoxProps) => {
             aria-label="Song Name"
             ref={ref}
             defaultValue={defaultValue}
+            data-testid="search-box"
           />
           <span className={styles.actions}>
             <button
@@ -37,6 +38,7 @@ const SearchBox = ({ defaultValue }: SearchBoxProps) => {
               id="random"
               title="Random Song"
               onClick={fillRandomSong}
+              data-testid="randomize"
             >
               <Image
                 src="/images/shuffle.svg"
