@@ -6,7 +6,7 @@ import { unmountComponentAtNode, render } from "react-dom";
 import { act } from "react-dom/test-utils";
 import SearchBox from "./search-box";
 import fetchMock, { enableFetchMocks } from "jest-fetch-mock";
-import { screen, fireEvent } from "@testing-library/react";
+import { screen, fireEvent, waitFor } from "@testing-library/react";
 import "@testing-library/jest-dom";
 
 let container: Element | null = null;
@@ -67,8 +67,7 @@ describe("SearchBox", () => {
     fireEvent.click(screen.getByTestId("randomize"));
     expect(fetchMock).toHaveBeenCalled();
 
-    // TODO: make this work
-    // const input = screen.getByTestId("search-box");
-    // expect(input).toHaveValue("Something");
+    const input = screen.getByTestId("search-box");
+    waitFor(() => expect(input).toHaveValue("Something"));
   });
 });

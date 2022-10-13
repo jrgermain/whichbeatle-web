@@ -8,6 +8,7 @@ type SearchBoxProps = {
 };
 
 const SearchBox = ({ defaultValue }: SearchBoxProps) => {
+  // const [isFetching, setFetching] =  useState(false);
   const ref = useRef<HTMLInputElement>(null);
   const fillRandomSong = () => {
     fetch("/api/songs/random")
