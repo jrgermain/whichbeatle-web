@@ -70,4 +70,6 @@ describe("SearchBox", () => {
     const input = screen.getByTestId("search-box");
     waitFor(() => expect(input).toHaveValue("Something"));
   });
+
+  it.todo("shows a spinner if result takes a long time");
 });
