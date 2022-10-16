@@ -40,7 +40,7 @@ describe("SearchResult", () => {
 
       expect(
         container?.querySelector('iframe[src="https://example.com/12345"]')
-      ).toBeTruthy();
+      ).toBeInTheDocument();
     });
   });
   it("does not render an iframe if video is falsy", () => {
@@ -56,7 +56,7 @@ describe("SearchResult", () => {
         container
       );
 
-      expect(container?.querySelector("iframe")).toBeFalsy();
+      expect(container?.querySelector("iframe")).not.toBeInTheDocument();
     });
   });
   it("renders the album name", () => {

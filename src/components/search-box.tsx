@@ -10,7 +10,7 @@ type SearchBoxProps = {
 
 const SearchBox = ({ defaultValue }: SearchBoxProps) => {
   const [isFetching, setFetching] = useState(false);
-  const ref = useRef<HTMLInputElement>(null);
+  const inputRef = useRef<HTMLInputElement>(null);
 
   const fillRandomSong = () => {
     // If no results in .3 seconds (serverless function cold start), show a spinner
@@ -18,7 +18,7 @@ const SearchBox = ({ defaultValue }: SearchBoxProps) => {
 
     fetch("/api/songs/random")
       .then((res) => res.text())
-      .then((text) => ref.current && (ref.current.value = text))
+      .then((text) => inputRef.current && (inputRef.current.value = text))
       .finally(() => clearTimeout(showSpinner)) // If our call returns and the spinner hasn't shown yet, cancel showing it
       .finally(() => setFetching(false)); // If our call returns and the spinner was already up, hide it
   };
@@ -33,11 +33,12 @@ const SearchBox = ({ defaultValue }: SearchBoxProps) => {
       <form className={styles["search-form"]} method="get" action="/search">
         <div className={styles["search-box"]}>
           <input
+            required
             type="text"
             name="song"
             placeholder="Search for a Beatles song"
             aria-label="Song Name"
-            ref={ref}
+            ref={inputRef}
             defaultValue={defaultValue}
             data-testid="search-box"
           />

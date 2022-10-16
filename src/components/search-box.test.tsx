@@ -38,9 +38,9 @@ describe("SearchBox", () => {
     });
 
     const form = container?.querySelector("form");
-    expect(form).toBeTruthy();
-    expect(form?.getAttribute("method")).toBe("get");
-    expect(form?.getAttribute("action")).toBe("/search");
+    expect(form).toBeInTheDocument();
+    expect(form).toHaveAttribute("method", "get");
+    expect(form).toHaveAttribute("action", "/search");
   });
 
   it("creates an input field with the correct placeholder text", () => {
@@ -72,7 +72,7 @@ describe("SearchBox", () => {
     expect(fetchMock).toHaveBeenCalled();
 
     const input = screen.getByTestId("search-box");
-    waitFor(() => expect(input).toHaveValue("Something"));
+    return waitFor(() => expect(input).toHaveValue("Something"));
   });
 
   it("shows a spinner if result takes a long time", async () => {

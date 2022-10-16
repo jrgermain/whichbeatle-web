@@ -36,7 +36,7 @@ describe("LoadingSpinner", () => {
     act(() => {
       render(<LoadingSpinner className="foo" />, container);
 
-      expect(document.querySelector(".foo")).toBeTruthy();
+      expect(document.querySelector(".foo")).toBeInTheDocument();
     });
   });
 });

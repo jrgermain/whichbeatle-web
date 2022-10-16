@@ -18,9 +18,7 @@ const GlobalHeader = () => (
       </a>
     </Link>
     <nav>
-      <NavLink href="/" isExact>
-        Home
-      </NavLink>
+      <NavLink href="/">Home</NavLink>
       <NavLink href="/about">About</NavLink>
       <NavLink href="/rest-api">API</NavLink>
     </nav>
