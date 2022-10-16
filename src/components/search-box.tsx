@@ -59,6 +59,7 @@ const SearchBox = ({ defaultValue }: SearchBoxProps) => {
                   width={24}
                   className={styles["button-icon"]}
                   alt=""
+                  data-testid="shuffle-icon"
                 />
               )}
             </button>
