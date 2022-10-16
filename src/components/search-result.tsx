@@ -21,7 +21,9 @@ const SearchResult = ({
       <iframe className={styles.video} allowFullScreen src={videoUrl} />
     )}
     <div className={styles.details}>
-      <h1 className={styles.song}>{title}</h1>
+      <h1 className={styles.song} data-testid="song-title">
+        {title}
+      </h1>
       <span className={styles.album}>
         <span className={styles["icon-container"]}>
           <Image
@@ -33,7 +35,9 @@ const SearchResult = ({
           />
         </span>
         <span className={styles.label}>Album</span>
-        <span className={styles["album-name"]}>{album}</span>
+        <span className={styles["album-name"]} data-testid="album-name">
+          {album}
+        </span>
       </span>
       <span className={styles.singer}>
         <span className={styles["icon-container"]}>
@@ -46,7 +50,9 @@ const SearchResult = ({
           />
         </span>
         <span className={styles.label}>Singer</span>
-        <span className={styles["singer-name"]}>{singer}</span>
+        <span className={styles["singer-name"]} data-testid="singer-name">
+          {singer}
+        </span>
       </span>
       <span className={styles.composer}>
         <span className={styles["icon-container"]}>
@@ -59,7 +65,9 @@ const SearchResult = ({
           />
         </span>
         <span className={styles.label}>Composer</span>
-        <span className={styles["composer-name"]}>{composer}</span>
+        <span className={styles["composer-name"]} data-testid="composer-name">
+          {composer}
+        </span>
       </span>
     </div>
   </article>

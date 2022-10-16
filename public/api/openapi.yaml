@@ -1,9 +1,9 @@
 openapi: 3.0.3
 info:
   title: Which Beatle API
-  description: |
-    This is a RESTful API for looking up information about
-    Beatles songs. It is part of my **Which Beatle?** project.
+  description: >-
+    This is a RESTful API for looking up information about Beatles songs. It is
+    part of my **Which Beatle?** project.
   version: 0.1.0
 externalDocs:
   description: For more information, see the project's GitHub repository
@@ -14,62 +14,57 @@ paths:
   /songs:
     get:
       summary: Get a list of songs
-      description: |
-        Gets information about Beatles songs, optionally
-        filtered by one or more of the criteria outlined below.
-        If no criteria are defined, all songs are returned. If
-        multiple criteria are defined, songs must match ALL of
-        the criteria provided.
+      description: >-
+        Gets information about Beatles songs, optionally filtered by one or
+        more of the criteria outlined below. If no criteria are defined, all
+        songs are returned. If multiple criteria are defined, songs must match
+        ALL of the criteria provided.
       parameters:
         - name: title
           in: query
-          description: |
-            The title of the song to search for. If specified
-            multiple times, songs with any of the provided
-            titles will be returned. If omitted, songs will not
-            be filtered by title.
+          description: >-
+            The title of the song to search for. If specified multiple times,
+            songs with any of the provided titles will be returned. If omitted,
+            songs will not be filtered by title.
           schema:
             type: array
             items:
               type: string
         - name: composer
           in: query
-          description: |
-            The last name of the composer to filter by. If
-            specified multiple times, songs with any of the
-            provided composers will be returned. If omitted,
-            songs will not be filtered by composer.
+          description: >-
+            The last name of the composer to filter by. If specified multiple
+            times, songs with any of the provided composers will be returned. If
+            omitted, songs will not be filtered by composer.
           schema:
             type: array
             items:
               type: string
         - name: singer
           in: query
-          description: |
-            The last name of the singer to filter by. If
-            specified multiple times, songs with any of the
-            provided singers will be returned. If omitted,
-            songs will not be filtered by singer.
+          description: >-
+            The last name of the singer to filter by. If specified multiple
+            times, songs with any of the provided singers will be returned. If
+            omitted, songs will not be filtered by singer.
           schema:
             type: array
             items:
               type: string
         - name: album
           in: query
-          description: |
-            The title of the album to filter by. If specified
-            multiple times, songs that appear on any of the
-            provided albums will be returned. If omitted, songs
-            will not be filtered by album.
+          description: >-
+            The title of the album to filter by. If specified multiple times,
+            songs that appear on any of the provided albums will be returned. If
+            omitted, songs will not be filtered by album.
           schema:
             type: array
             items:
               type: string
       responses:
         "200":
-          description: |
-            A list of songs filtered by any criteria specified
-            in the query string
+          description: >-
+            A list of songs filtered by any criteria specified in the query
+            string
           content:
             application/json:
               schema:

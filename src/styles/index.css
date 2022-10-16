@@ -21,6 +21,16 @@ main {
   overflow: hidden;
 }
 
+a {
+  color: var(--theme-color);
+  text-decoration: none;
+  font-weight: bold;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
 :root {
   --page-bg: #f0f0f0;
   --page-fg: #333;
@@ -29,8 +39,11 @@ main {
   --result-bg: white;
   --result-fg: black;
   --header-bg: white;
+  --header-fg: black;
+  --mobile-nav-bg: #fffc;
   --border-color: #ccc;
   --shadow-color: #cccc;
+  --theme-color: #1d78d4;
 }
 
 @media (prefers-color-scheme: dark) {
@@ -42,6 +55,8 @@ main {
     --result-bg: black;
     --result-fg: white;
     --header-bg: #111;
+    --header-fg: #eee;
+    --mobile-nav-bg: #333c;
     --border-color: #444;
     --shadow-color: #111;
   }

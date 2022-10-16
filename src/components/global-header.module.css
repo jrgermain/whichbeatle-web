@@ -1,0 +1,108 @@
+.header {
+  background: var(--header-bg);
+  display: flex;
+  align-items: center;
+  padding: 5px 20px;
+  width: 100%;
+  box-sizing: border-box;
+  box-shadow: 0 2px 6px 0 var(--shadow-color);
+  border-bottom: 1px solid var(--border-color);
+}
+
+.logo {
+  width: 110px;
+  margin: 5px 0;
+  cursor: pointer;
+  min-width: 65px;
+}
+
+@media (prefers-color-scheme: dark) {
+  .logo {
+    filter: invert(0.93);
+  }
+}
+
+.header nav {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 0.5em;
+  flex: auto;
+}
+
+.toggle,
+.hamburger {
+  display: none;
+}
+
+@media screen and (max-width: 400px) {
+  .hamburger {
+    display: inline-block;
+    position: relative;
+    margin-left: auto;
+    height: 40px;
+    width: 40px;
+  }
+
+  .hamburger .line {
+    display: inline-block;
+    position: absolute;
+    height: 4px;
+    width: 30px;
+    background-color: var(--header-fg);
+    transition: all 0.4s ease;
+  }
+
+  .toggle:not(:checked) + .hamburger .line:nth-last-child(3) {
+    top: 9px;
+  }
+
+  .toggle:not(:checked) + .hamburger .line:nth-last-child(2) {
+    top: 18px;
+  }
+
+  .toggle:not(:checked) + .hamburger .line:nth-last-child(1) {
+    top: 27px;
+  }
+
+  .toggle:checked + .hamburger .line:nth-last-child(3) {
+    transform: rotate(45deg);
+    top: 18px;
+  }
+
+  .toggle:checked + .hamburger .line:nth-last-child(2) {
+    top: 20px;
+    height: 0;
+    opacity: 0;
+  }
+
+  .toggle:checked + .hamburger .line:nth-last-child(1) {
+    transform: rotate(-45deg);
+    top: 18px;
+  }
+
+  .toggle:checked + .hamburger .expand,
+  .toggle:not(:checked) + .hamburger .close,
+  .toggle:not(:checked) ~ nav {
+    display: none;
+  }
+
+  .toggle:checked ~ nav {
+    position: fixed;
+    top: 80px;
+    left: 0;
+    width: 100%;
+    height: calc(100% - 80px);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    background-color: var(--mobile-nav-bg);
+    z-index: 1;
+    backdrop-filter: blur(10px);
+  }
+
+  .toggle:checked ~ nav a {
+    width: 100%;
+  }
+}
