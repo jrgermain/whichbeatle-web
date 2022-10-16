@@ -26,9 +26,9 @@ const Api: NextPage = () => {
           </p>
           <p>
             <em>Which Beatle?</em> is a website where you can type the name of
-            any Beatles song and find information about that song, namely who
-            wrote it, who sang it, and what albums it appeared on. We also
-            integrate with YouTube to let you listen to the songs you look up.
+            any Beatles song and find who wrote it, who sang it, and what albums
+            it appeared on. We also integrate with YouTube to let you listen to
+            the songs you look up.
           </p>
           <p>
             If you{"'"}re interested in seeing the code for this website, take a
