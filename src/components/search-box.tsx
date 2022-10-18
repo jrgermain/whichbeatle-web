@@ -17,8 +17,8 @@ const SearchBox = ({ defaultValue }: SearchBoxProps) => {
     const showSpinner = setTimeout(() => setFetching(true), 300);
 
     fetch("/api/songs/random")
-      .then((res) => res.text())
-      .then((text) => inputRef.current && (inputRef.current.value = text))
+      .then((res) => res.json())
+      .then((song) => inputRef.current && (inputRef.current.value = song.title))
       .finally(() => clearTimeout(showSpinner)) // If our call returns and the spinner hasn't shown yet, cancel showing it
       .finally(() => setFetching(false)); // If our call returns and the spinner was already up, hide it
   };

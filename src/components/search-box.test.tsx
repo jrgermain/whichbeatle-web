@@ -8,6 +8,7 @@ import SearchBox from "./search-box";
 import fetchMock, { enableFetchMocks } from "jest-fetch-mock";
 import { screen, fireEvent, waitFor } from "@testing-library/react";
 import "@testing-library/jest-dom";
+import Song from "../types/song";
 
 let container: Element | null = null;
 
@@ -62,7 +63,14 @@ describe("SearchBox", () => {
   });
 
   it("calls the api when the 'random' button is clicked", () => {
-    fetchMock.mockResponse("Something");
+    fetchMock.mockResponse(
+      JSON.stringify({
+        title: "Something",
+        singer: "Harrison",
+        composer: "Harrison",
+        album: "Abbey Road",
+      } as Song)
+    );
 
     act(() => {
       render(<SearchBox defaultValue="Mean Mr Mustard" />, container);
@@ -105,7 +113,14 @@ describe("SearchBox", () => {
     expect(screen.queryByTestId("shuffle-icon")).toBeNull();
 
     // Make mock fetch return a result
-    returnFromFetch("Yellow Submarine");
+    returnFromFetch(
+      JSON.stringify({
+        title: "Yellow Submarine",
+        singer: "Starr",
+        composer: "McCartney",
+        album: "Yellow Submarine",
+      } as Song)
+    );
 
     // Wait for UI state to go back to normal
     await screen.findByTestId("shuffle-icon");
@@ -117,7 +132,14 @@ describe("SearchBox", () => {
   });
 
   it("does not show a spinner if the results come back quickly", async () => {
-    fetchMock.mockResponse("Something");
+    fetchMock.mockResponse(
+      JSON.stringify({
+        title: "Something",
+        singer: "Harrison",
+        composer: "Harrison",
+        album: "Abbey Road",
+      } as Song)
+    );
 
     act(() => {
       render(<SearchBox defaultValue="Mean Mr Mustard" />, container);

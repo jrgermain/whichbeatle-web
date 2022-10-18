@@ -4,12 +4,15 @@ info:
   description: >-
     This is a RESTful API for looking up information about Beatles songs. It is
     part of my **Which Beatle?** project.
-  version: 0.1.0
+  version: 0.2.0
 externalDocs:
   description: For more information, see the project's GitHub repository
   url: https://github.com/jrgermain/whichbeatle-web
 servers:
   - url: https://whichbeatle.jrgermain.dev/api
+tags:
+  - name: song
+    description: Operations related to Beatles songs
 paths:
   /songs:
     get:
@@ -19,6 +22,7 @@ paths:
         more of the criteria outlined below. If no criteria are defined, all
         songs are returned. If multiple criteria are defined, songs must match
         ALL of the criteria provided.
+      tags: [song]
       parameters:
         - name: title
           in: query
@@ -70,24 +74,28 @@ paths:
               schema:
                 type: array
                 items:
-                  type: object
-                  properties:
-                    album:
-                      type: string
-                    composer:
-                      type: string
-                    singer:
-                      type: string
-                    title:
-                      type: string
+                  $ref: "#/components/schemas/Song"
   /songs/random:
     get:
-      summary: Get a random song title
+      summary: Get a random song
+      tags: [song]
       responses:
         "200":
-          description: The title of a random Beatles song
+          description: A random Beatles song
           content:
-            text/plain:
+            application/json:
               schema:
-                type: string
-                example: Yellow Submarine
+                $ref: "#/components/schemas/Song"
+components:
+  schemas:
+    Song:
+      type: object
+      properties:
+        album:
+          type: string
+        composer:
+          type: string
+        singer:
+          type: string
+        title:
+          type: string
