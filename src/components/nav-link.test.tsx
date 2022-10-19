@@ -7,7 +7,7 @@ import { unmountComponentAtNode, render } from "react-dom";
 import { act } from "react-dom/test-utils";
 import NavLink from "./nav-link";
 import "@testing-library/jest-dom";
-import { screen } from "@testing-library/react";
+import { fireEvent, screen, waitFor } from "@testing-library/react";
 
 let container: Element | null = null;
 
@@ -67,5 +67,38 @@ describe("NavLink", () => {
       render(<NavLink href="/something-else">Link 3</NavLink>, container);
     });
     expect(screen.getByText("Link 3")).not.toHaveAttribute("aria-current");
+  });
+
+  it("toggles the nav closed on click (small screens, js enabled)", () => {
+    jest.mocked(useRouter).mockReturnValue({
+      route: "/",
+      pathname: "/",
+      query: {},
+      asPath: "/",
+    } as Router);
+
+    act(() => {
+      render(
+        <>
+          <input
+            type="checkbox"
+            id="toggle-nav"
+            defaultChecked
+            data-testid="toggle"
+          />
+          <NavLink href="/">Link 3</NavLink>
+        </>,
+        container
+      );
+    });
+
+    // sanity check
+    expect(screen.getByTestId("toggle")).toBeChecked();
+
+    fireEvent.click(screen.getByText("Link 3"));
+
+    return waitFor(() => {
+      expect(screen.getByTestId("toggle")).not.toBeChecked();
+    });
   });
 });
