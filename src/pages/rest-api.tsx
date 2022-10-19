@@ -1,5 +1,6 @@
 import type { NextPage } from "next";
 import Head from "next/head";
+import Link from "next/link";
 import ContentLayout from "../components/content-layout";
 
 const RestApi: NextPage = () => {
@@ -21,15 +22,22 @@ const RestApi: NextPage = () => {
           </p>
           <p>
             If you{"'"}d like to use this API in your app, you might be
-            interested in our OpenAPI documentation (
-            <a className="link" href="/api/openapi.yaml">
-              YAML
-            </a>
-            ,{" "}
-            <a className="link" href="/api/openapi.json">
-              JSON
-            </a>
-            ).
+            interested in our{" "}
+            <Link href="/api">
+              <a>OpenAPI documentation</a>
+            </Link>
+            .
+          </p>
+          <p>
+            You can also download our OpenAPI specification as{" "}
+            <Link href="/api/openapi.json">
+              <a>JSON</a>
+            </Link>{" "}
+            or{" "}
+            <Link href="/api/openapi.yaml">
+              <a>YAML</a>
+            </Link>
+            .
           </p>
         </ContentLayout>
       </main>
