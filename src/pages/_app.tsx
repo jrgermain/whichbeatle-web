@@ -12,6 +12,16 @@ function MyApp({ Component, pageProps }: AppProps) {
           name="description"
           content="Find info about Beatles songs, listen to your favorites, and discover new ones!"
         />
+        <meta
+          name="theme-color"
+          content="#ffffff"
+          media="(prefers-color-scheme: light)"
+        />
+        <meta
+          name="theme-color"
+          content="#111111"
+          media="(prefers-color-scheme: dark)"
+        />
         <link rel="icon" href="/images/favicon.ico" />
       </Head>
       <GlobalHeader />
