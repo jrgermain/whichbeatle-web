@@ -75,7 +75,7 @@
   margin-top: 0.5em;
 }
 
-@media screen and (max-width: 800px) {
+@media screen and (width <= 800px) {
   .search-result {
     flex-direction: column;
     width: 80vw;
@@ -136,7 +136,7 @@
   }
 }
 
-@media screen and (min-width: 2000px) {
+@media screen and (width >= 2000px) {
   .search-result:nth-child(odd):last-child {
     grid-column: 1/-1;
   }

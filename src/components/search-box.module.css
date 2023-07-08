@@ -87,7 +87,7 @@
 }
 
 /* On small screens, move the buttons outside the search box to save horizontal space */
-@media screen and (max-width: 800px) {
+@media screen and (width <= 800px) {
   .search-box {
     margin-bottom: 4em;
   }
