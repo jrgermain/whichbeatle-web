@@ -22,22 +22,12 @@ const RestApi: NextPage = () => {
           </p>
           <p>
             If you{"'"}d like to use this API in your app, you might be
-            interested in our{" "}
-            <Link href="/api">
-              <a>OpenAPI documentation</a>
-            </Link>
-            .
+            interested in our <Link href="/api">OpenAPI documentation</Link>.
           </p>
           <p>
             You can also download our OpenAPI specification as{" "}
-            <Link href="/api/openapi.json">
-              <a>JSON</a>
-            </Link>{" "}
-            or{" "}
-            <Link href="/api/openapi.yaml">
-              <a>YAML</a>
-            </Link>
-            .
+            <Link href="/api/openapi.json">JSON</Link> or{" "}
+            <Link href="/api/openapi.yaml">YAML</Link>.
           </p>
         </ContentLayout>
       </main>

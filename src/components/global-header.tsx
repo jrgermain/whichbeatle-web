@@ -5,16 +5,14 @@ import NavLink from "./nav-link";
 
 const GlobalHeader = () => (
   <header className={styles.header}>
-    <Link href="/">
-      <a data-testid="home-link" className={styles.logo}>
-        <Image
-          src="/images/logo.png"
-          alt="Which Beatle?"
-          height={56}
-          width={110}
-        />
-        <span className="sr-only">Home</span>
-      </a>
+    <Link href="/" data-testid="home-link" className={styles.logo}>
+      <Image
+        src="/images/logo.png"
+        alt="Which Beatle?"
+        height={56}
+        width={110}
+      />
+      <span className="sr-only">Home</span>
     </Link>
     <input type="checkbox" className={styles.toggle} id="toggle-nav" />
     <label className={styles.hamburger} htmlFor="toggle-nav">
