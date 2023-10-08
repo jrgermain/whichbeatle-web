@@ -10,10 +10,10 @@ const customJestConfig = {
   collectCoverage: true,
   coverageThreshold: {
     global: {
-      functions: 100,
-      branches: 80,
-      lines: 80,
-      statements: 80,
+      functions: 90,
+      branches: 90,
+      lines: 90,
+      statements: 90,
     },
   },
 };
