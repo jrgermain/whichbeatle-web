@@ -30,7 +30,12 @@ const SearchBox = ({ defaultValue }: SearchBoxProps) => {
           <style>{"#random { display: none; }"}</style>
         </noscript>
       </Head>
-      <form className={styles["search-form"]} method="get" action="/search">
+      <form
+        className={styles["search-form"]}
+        method="get"
+        action="/search"
+        role="search"
+      >
         <div className={styles["search-box"]}>
           <input
             required

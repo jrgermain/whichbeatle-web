@@ -2,62 +2,38 @@
  * @jest-environment jsdom
  */
 
-import { unmountComponentAtNode, render } from "react-dom";
-import { act } from "react-dom/test-utils";
-import { screen } from "@testing-library/react";
-import "@testing-library/jest-dom";
+import { render, screen } from "@testing-library/react";
 import SearchResult from "./search-result";
-
-let container: Element | null = null;
-
-beforeEach(() => {
-  container = document.createElement("div");
-  document.body.appendChild(container);
-});
-
-afterEach(() => {
-  if (!container) {
-    return;
-  }
-  unmountComponentAtNode(container);
-  container.remove();
-  container = null;
-});
+import "@testing-library/jest-dom";
 
 describe("SearchResult", () => {
   it("renders an iframe if video is truthy", () => {
-    act(() => {
-      render(
-        <SearchResult
-          title="You Never Give Me Your Money"
-          album="Abbey Road"
-          singer="McCartney"
-          composer="McCartney"
-          videoUrl="https://example.com/12345"
-        />,
-        container
-      );
+    render(
+      <SearchResult
+        title="You Never Give Me Your Money"
+        album="Abbey Road"
+        singer="McCartney"
+        composer="McCartney"
+        videoUrl="https://example.com/12345"
+      />
+    );
 
-      expect(
-        container?.querySelector('iframe[src="https://example.com/12345"]')
-      ).toBeInTheDocument();
-    });
+    expect(
+      document.querySelector('iframe[src="https://example.com/12345"]')
+    ).toBeInTheDocument();
   });
   it("does not render an iframe if video is falsy", () => {
-    act(() => {
-      render(
-        <SearchResult
-          title="You Never Give Me Your Money"
-          album="Abbey Road"
-          singer="McCartney"
-          composer="McCartney"
-          videoUrl={undefined}
-        />,
-        container
-      );
+    render(
+      <SearchResult
+        title="You Never Give Me Your Money"
+        album="Abbey Road"
+        singer="McCartney"
+        composer="McCartney"
+        videoUrl={undefined}
+      />
+    );
 
-      expect(container?.querySelector("iframe")).not.toBeInTheDocument();
-    });
+    expect(document?.querySelector("iframe")).not.toBeInTheDocument();
   });
   it("renders the album name", () => {
     render(
@@ -67,8 +43,7 @@ describe("SearchResult", () => {
         singer="McCartney"
         composer="McCartney"
         videoUrl="https://example.com/12345"
-      />,
-      container
+      />
     );
 
     expect(screen.getByTestId("album-name")).toHaveTextContent("Abbey Road");
@@ -81,8 +56,7 @@ describe("SearchResult", () => {
         singer="McCartney"
         composer="McCartney"
         videoUrl="https://example.com/12345"
-      />,
-      container
+      />
     );
 
     expect(screen.getByTestId("singer-name")).toHaveTextContent("McCartney");
@@ -95,8 +69,7 @@ describe("SearchResult", () => {
         singer="McCartney"
         composer="McCartney"
         videoUrl="https://example.com/12345"
-      />,
-      container
+      />
     );
 
     expect(screen.getByTestId("composer-name")).toHaveTextContent("McCartney");
@@ -109,8 +82,7 @@ describe("SearchResult", () => {
         singer="McCartney"
         composer="McCartney"
         videoUrl="https://example.com/12345"
-      />,
-      container
+      />
     );
 
     expect(screen.getByTestId("song-title")).toHaveTextContent(

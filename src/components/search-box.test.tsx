@@ -2,29 +2,13 @@
  * @jest-environment jsdom
  */
 
-import { unmountComponentAtNode, render } from "react-dom";
-import { act } from "react-dom/test-utils";
 import SearchBox from "./search-box";
 import fetchMock, { enableFetchMocks } from "jest-fetch-mock";
-import { screen, fireEvent, waitFor } from "@testing-library/react";
-import "@testing-library/jest-dom";
+import { render, screen, fireEvent, waitFor } from "@testing-library/react";
 import Song from "../types/song";
-
-let container: Element | null = null;
-
-beforeEach(() => {
-  container = document.createElement("div");
-  document.body.appendChild(container);
-});
+import "@testing-library/jest-dom";
 
 afterEach(() => {
-  if (!container) {
-    return;
-  }
-  unmountComponentAtNode(container);
-  container.remove();
-  container = null;
-
   // Cleanup fake timers
   jest.runOnlyPendingTimers();
   jest.useRealTimers();
@@ -34,29 +18,22 @@ enableFetchMocks();
 
 describe("SearchBox", () => {
   it("creates a form that points to the search page", () => {
-    act(() => {
-      render(<SearchBox />, container);
-    });
+    render(<SearchBox />);
 
-    const form = container?.querySelector("form");
-    expect(form).toBeInTheDocument();
+    const form = screen.getByRole("search");
     expect(form).toHaveAttribute("method", "get");
     expect(form).toHaveAttribute("action", "/search");
   });
 
   it("creates an input field with the correct placeholder text", () => {
-    act(() => {
-      render(<SearchBox />, container);
-    });
+    render(<SearchBox />);
 
     const input = screen.getByTestId("search-box");
     expect(input).toHaveAttribute("placeholder", "Search for a Beatles song");
   });
 
   it("sets the default value if provided", () => {
-    act(() => {
-      render(<SearchBox defaultValue="Mean Mr Mustard" />, container);
-    });
+    render(<SearchBox defaultValue="Mean Mr Mustard" />);
 
     const input = screen.getByTestId("search-box");
     expect(input).toHaveValue("Mean Mr Mustard");
@@ -72,9 +49,7 @@ describe("SearchBox", () => {
       } as Song)
     );
 
-    act(() => {
-      render(<SearchBox defaultValue="Mean Mr Mustard" />, container);
-    });
+    render(<SearchBox defaultValue="Mean Mr Mustard" />);
 
     fireEvent.click(screen.getByTestId("randomize"));
     expect(fetchMock).toHaveBeenCalled();
@@ -94,9 +69,7 @@ describe("SearchBox", () => {
         })
     );
 
-    act(() => {
-      render(<SearchBox defaultValue="Mean Mr Mustard" />, container);
-    });
+    render(<SearchBox defaultValue="Mean Mr Mustard" />);
 
     // The randomize button should make a fetch call when it is clicked
     fireEvent.click(screen.getByTestId("randomize"));
@@ -141,9 +114,7 @@ describe("SearchBox", () => {
       } as Song)
     );
 
-    act(() => {
-      render(<SearchBox defaultValue="Mean Mr Mustard" />, container);
-    });
+    render(<SearchBox defaultValue="Mean Mr Mustard" />);
 
     fireEvent.click(screen.getByTestId("randomize"));
     await waitFor(() => {

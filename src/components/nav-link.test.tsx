@@ -3,27 +3,9 @@
  */
 
 import { Router, useRouter } from "next/router";
-import { unmountComponentAtNode, render } from "react-dom";
-import { act } from "react-dom/test-utils";
+import { render, screen } from "@testing-library/react";
 import NavLink from "./nav-link";
 import "@testing-library/jest-dom";
-import { screen } from "@testing-library/react";
-
-let container: Element | null = null;
-
-beforeEach(() => {
-  container = document.createElement("div");
-  document.body.appendChild(container);
-});
-
-afterEach(() => {
-  if (!container) {
-    return;
-  }
-  unmountComponentAtNode(container);
-  container.remove();
-  container = null;
-});
 
 jest.mock("next/router", () => ({
   useRouter: jest.fn(),
@@ -37,9 +19,7 @@ describe("NavLink", () => {
       query: {},
       asPath: "/test-nav-link",
     } as Router);
-    act(() => {
-      render(<NavLink href="/test-nav-link">Link 1</NavLink>, container);
-    });
+    render(<NavLink href="/test-nav-link">Link 1</NavLink>);
     expect(screen.getByText("Link 1")).toHaveAttribute("aria-current", "page");
   });
 
@@ -50,9 +30,7 @@ describe("NavLink", () => {
       query: {},
       asPath: "/test-nav-link/child",
     } as Router);
-    act(() => {
-      render(<NavLink href="/test-nav-link">Link 2</NavLink>, container);
-    });
+    render(<NavLink href="/test-nav-link">Link 2</NavLink>);
     expect(screen.getByText("Link 2")).not.toHaveAttribute("aria-current");
   });
 
@@ -63,9 +41,7 @@ describe("NavLink", () => {
       query: {},
       asPath: "/test-nav-link",
     } as Router);
-    act(() => {
-      render(<NavLink href="/something-else">Link 3</NavLink>, container);
-    });
+    render(<NavLink href="/something-else">Link 3</NavLink>);
     expect(screen.getByText("Link 3")).not.toHaveAttribute("aria-current");
   });
 });
