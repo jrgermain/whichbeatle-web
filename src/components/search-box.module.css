@@ -5,6 +5,7 @@
 }
 
 .search-box {
+  height: 3em;
   display: flex;
   position: relative;
   font-size: clamp(1rem, 3vw, 1.25rem);
@@ -62,7 +63,7 @@
 
 .search-box .actions button .button-icon {
   box-sizing: border-box;
-  height: 67%;
+  height: 1.5em;
   width: auto;
 }
 
@@ -108,16 +109,6 @@
     width: 48%;
     border-radius: 10px !important;
     height: 2.5em;
-  }
-
-  .search-box .actions button .button-label {
-    position: static;
-    width: auto;
-    height: auto;
-  }
-
-  .search-box .actions button .button-icon {
-    display: none;
   }
 
   .search-box .actions button[type="button"] {
