@@ -1,4 +1,4 @@
-import { STATUS_CODES } from "http";
+import { STATUS_CODES } from "node:http";
 
 const errorMessages = [
   "Maxwell hit us with his silver hammer.",

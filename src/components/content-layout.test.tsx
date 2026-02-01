@@ -1,10 +1,6 @@
-/**
- * @jest-environment jsdom
- */
-
 import { render, screen } from "@testing-library/react";
+import { describe, expect, it } from "vitest";
 import ContentLayout from "./content-layout";
-import "@testing-library/jest-dom";
 
 describe("ContentLayout", () => {
   it("renders its children inside an <article>", () => {

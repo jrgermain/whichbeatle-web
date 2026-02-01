@@ -9,7 +9,7 @@ export const getVideoUrl = async (songTitle: string) => {
       })}`,
       {
         method: "GET",
-      }
+      },
     );
     const json = await response.json();
     const id = json.items[0]?.id?.videoId;

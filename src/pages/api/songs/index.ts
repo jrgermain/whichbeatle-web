@@ -1,12 +1,12 @@
 // Next.js API route support: https://nextjs.org/docs/api-routes/introduction
 import type { NextApiRequest, NextApiResponse } from "next";
-import Song from "../../../types/song";
 import * as SearchService from "../../../services/search";
+import type Song from "../../../types/song";
 import { queryToArray } from "../../../utils/query-string";
 
 export default function handler(
   req: NextApiRequest,
-  res: NextApiResponse<Song[]>
+  res: NextApiResponse<Song[]>,
 ) {
   const { title, composer, singer, album } = req.query;
   const results = SearchService.findAll({

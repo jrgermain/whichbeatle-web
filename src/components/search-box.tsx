@@ -1,8 +1,8 @@
-import styles from "./search-box.module.css";
+import Head from "next/head";
 import Image from "next/image";
 import { useRef, useState } from "react";
-import Head from "next/head";
 import LoadingSpinner from "./loading-spinner";
+import styles from "./search-box.module.css";
 
 type SearchBoxProps = {
   defaultValue?: string;
@@ -18,7 +18,9 @@ const SearchBox = ({ defaultValue }: SearchBoxProps) => {
 
     fetch("/api/songs/random")
       .then((res) => res.json())
-      .then((song) => inputRef.current && (inputRef.current.value = song.title))
+      .then((song) => {
+        if (inputRef.current) inputRef.current.value = song.title;
+      })
       .finally(() => clearTimeout(showSpinner)) // If our call returns and the spinner hasn't shown yet, cancel showing it
       .finally(() => setFetching(false)); // If our call returns and the spinner was already up, hide it
   };
@@ -31,10 +33,10 @@ const SearchBox = ({ defaultValue }: SearchBoxProps) => {
         </noscript>
       </Head>
       <form
+        data-testid="search-form"
         className={styles["search-form"]}
         method="get"
         action="/search"
-        role="search"
       >
         <div className={styles["search-box"]}>
           <input

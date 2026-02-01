@@ -17,7 +17,9 @@
 }
 
 .search-box :focus {
-  box-shadow: 0 0 0 2px #6ae, inset 0 0 1px #6ae;
+  box-shadow:
+    0 0 0 2px #6ae,
+    inset 0 0 1px #6ae;
 }
 
 .search-box input {
@@ -44,7 +46,9 @@
   border: 0;
   outline: 0;
   border-radius: 0;
-  transition: background-color 0.2s ease, box-shadow 0.2s ease;
+  transition:
+    background-color 0.2s ease,
+    box-shadow 0.2s ease;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -94,7 +98,7 @@
   }
 
   .search-box input {
-    border-radius: 5px !important;
+    border-radius: 5px;
   }
 
   .search-box .actions {
@@ -107,7 +111,7 @@
 
   .search-box .actions button {
     width: 48%;
-    border-radius: 10px !important;
+    border-radius: 10px;
     height: 2.5em;
   }
 
