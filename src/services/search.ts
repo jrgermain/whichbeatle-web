@@ -1,4 +1,3 @@
-import type { Entries } from "type-fest";
 import discography from "../data/discography.json";
 import type Song from "../types/song";
 
@@ -63,12 +62,14 @@ type FindAllInput = Partial<Record<keyof Song, string[]>>;
  * @returns An array containing the matching songs
  */
 export function findAll(queries: FindAllInput): Song[] {
-  const filters = Object.entries(queries) as Entries<FindAllInput>;
+  const filters = Object.entries(queries);
   return discography.filter((song) =>
     filters.every(
       ([field, values]) =>
         !values?.length || // Filter was not provided or has no value, so don't filter by that field
-        values.some((value) => value && isMatch(value, song, field)),
+        values.some(
+          (value) => value && isMatch(value, song, field as keyof Song),
+        ),
     ),
   );
 }
