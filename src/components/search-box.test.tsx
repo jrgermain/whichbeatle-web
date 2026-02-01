@@ -1,26 +1,34 @@
-/**
- * @jest-environment jsdom
- */
-
+import {
+  act,
+  fireEvent,
+  render,
+  screen,
+  waitFor,
+} from "@testing-library/react";
+import { afterEach, beforeEach, describe, expect, it, vi } from "vitest";
+import type Song from "../types/song";
 import SearchBox from "./search-box";
-import fetchMock, { enableFetchMocks } from "jest-fetch-mock";
-import { render, screen, fireEvent, waitFor } from "@testing-library/react";
-import Song from "../types/song";
-import "@testing-library/jest-dom";
+
+// Mock fetch globally
+global.fetch = vi.fn();
+
+beforeEach(() => {
+  vi.clearAllMocks();
+});
 
 afterEach(() => {
   // Cleanup fake timers
-  jest.runOnlyPendingTimers();
-  jest.useRealTimers();
+  if (vi.isFakeTimers()) {
+    vi.runOnlyPendingTimers();
+    vi.useRealTimers();
+  }
 });
-
-enableFetchMocks();
 
 describe("SearchBox", () => {
   it("creates a form that points to the search page", () => {
     render(<SearchBox />);
 
-    const form = screen.getByRole("search");
+    const form = screen.getByTestId("search-form");
     expect(form).toHaveAttribute("method", "get");
     expect(form).toHaveAttribute("action", "/search");
   });
@@ -40,85 +48,96 @@ describe("SearchBox", () => {
   });
 
   it("calls the api when the 'random' button is clicked", () => {
-    fetchMock.mockResponse(
-      JSON.stringify({
-        title: "Something",
-        singer: "Harrison",
-        composer: "Harrison",
-        album: "Abbey Road",
-      } as Song)
-    );
+    vi.mocked(fetch).mockResolvedValue({
+      ok: true,
+      json: async () =>
+        ({
+          title: "Something",
+          singer: "Harrison",
+          composer: "Harrison",
+          album: "Abbey Road",
+        }) satisfies Song,
+    } as Response);
 
     render(<SearchBox defaultValue="Mean Mr Mustard" />);
 
     fireEvent.click(screen.getByTestId("randomize"));
-    expect(fetchMock).toHaveBeenCalled();
+    expect(fetch).toHaveBeenCalled();
 
     const input = screen.getByTestId("search-box");
     return waitFor(() => expect(input).toHaveValue("Something"));
   });
 
   it("shows a spinner if result takes a long time", async () => {
+    vi.useFakeTimers();
+
     // Make fetch return a dummy promise that we can resolve at will
-    let returnFromFetch: (x: string) => void = (x) => void x; // Needs to be initialized for TS to be happy
-    fetchMock.mockResponse(
-      () =>
-        new Promise((resolve) => {
-          // The resolve callback is NOT called here, but we do save a reference to call it later
-          returnFromFetch = resolve;
-        })
+    let returnFromFetch: (value: Response) => void;
+    vi.mocked(fetch).mockReturnValue(
+      new Promise((resolve) => {
+        // The resolve callback is NOT called here, but we do save a reference to call it later
+        returnFromFetch = resolve;
+      }),
     );
 
     render(<SearchBox defaultValue="Mean Mr Mustard" />);
 
     // The randomize button should make a fetch call when it is clicked
-    fireEvent.click(screen.getByTestId("randomize"));
-    await waitFor(() => {
-      expect(fetchMock).toHaveBeenCalled();
+    await act(async () => {
+      fireEvent.click(screen.getByTestId("randomize"));
     });
+    expect(fetch).toHaveBeenCalled();
 
     // Skip the 300ms wait for the spinner to appear
-    jest.runAllTimers();
+    await act(async () => {
+      await vi.advanceTimersByTimeAsync(300);
+    });
 
     // Make sure shuffle icon is replaced by a loading spinner and the button is disabled
-    await screen.findByTitle("Loading");
+    expect(screen.queryByTitle("Loading")).toBeInTheDocument();
     expect(screen.getByTestId("randomize")).toBeDisabled();
     expect(screen.queryByTestId("shuffle-icon")).toBeNull();
 
     // Make mock fetch return a result
-    returnFromFetch(
-      JSON.stringify({
-        title: "Yellow Submarine",
-        singer: "Starr",
-        composer: "McCartney",
-        album: "Yellow Submarine",
-      } as Song)
-    );
+    await act(async () => {
+      returnFromFetch({
+        ok: true,
+        json: async () =>
+          ({
+            title: "Yellow Submarine",
+            singer: "Starr",
+            composer: "McCartney",
+            album: "Yellow Submarine",
+          }) as Song,
+      } as Response);
+    });
 
     // Wait for UI state to go back to normal
-    await screen.findByTestId("shuffle-icon");
+    expect(screen.queryByTestId("shuffle-icon")).toBeInTheDocument();
     expect(screen.getByTestId("randomize")).toBeEnabled();
-    expect(screen.queryByTitle("Loading")).toBeNull();
+    expect(screen.queryByTitle("Loading")).not.toBeInTheDocument();
 
     // Make sure text box is updated
     expect(screen.getByTestId("search-box")).toHaveValue("Yellow Submarine");
   });
 
   it("does not show a spinner if the results come back quickly", async () => {
-    fetchMock.mockResponse(
-      JSON.stringify({
-        title: "Something",
-        singer: "Harrison",
-        composer: "Harrison",
-        album: "Abbey Road",
-      } as Song)
-    );
+    vi.mocked(fetch).mockResolvedValue({
+      ok: true,
+      json: async () =>
+        ({
+          title: "Something",
+          singer: "Harrison",
+          composer: "Harrison",
+          album: "Abbey Road",
+        }) satisfies Song,
+    } as Response);
 
     render(<SearchBox defaultValue="Mean Mr Mustard" />);
 
     fireEvent.click(screen.getByTestId("randomize"));
     await waitFor(() => {
-      expect(fetchMock).toHaveBeenCalled();
+      expect(fetch).toHaveBeenCalled();
     });
 
     // Make sure the spinner does NOT appear

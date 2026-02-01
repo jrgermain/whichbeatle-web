@@ -1,5 +1,6 @@
-import { findAll, findAllByTitle, getRandom } from "./search";
+import { describe, expect, it } from "vitest";
 import discography from "../data/discography.json";
+import { findAll, findAllByTitle, getRandom } from "./search";
 
 describe("findAll", () => {
   it("returns everything if no filter is given", () => {
@@ -13,7 +14,7 @@ describe("findAll", () => {
         composer: [],
         singer: [],
         title: [],
-      })
+      }),
     ).toStrictEqual(discography);
   });
 

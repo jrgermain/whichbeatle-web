@@ -18,7 +18,12 @@ const SearchResult = ({
 }: SearchResultProps) => (
   <article className={styles["search-result"]}>
     {!!videoUrl && (
-      <iframe className={styles.video} allowFullScreen src={videoUrl} />
+      <iframe
+        title="YouTube video"
+        className={styles.video}
+        allowFullScreen
+        src={videoUrl}
+      />
     )}
     <div className={styles.details}>
       <h1 className={styles.song} data-testid="song-title">

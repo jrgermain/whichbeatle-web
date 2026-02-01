@@ -1,19 +1,24 @@
+import { afterAll, beforeAll, describe, expect, it, vi } from "vitest";
 import { getVideoUrl } from "./youtube";
-import fetchMock, { enableFetchMocks } from "jest-fetch-mock";
 
-enableFetchMocks();
+// Mock fetch globally
+global.fetch = vi.fn();
 
 describe("getVideoUrl", () => {
   beforeAll(() => {
     process.env.YOUTUBE_API_KEY = "abcdefg";
   });
   it("calls fetch with the correct parameters", async () => {
+    vi.mocked(fetch).mockResolvedValueOnce({
+      ok: true,
+      json: async () => ({ items: [] }),
+    } as Response);
+
     await getVideoUrl("Something");
-    const lastCall = fetchMock.mock.calls.at(-1);
+    const lastCall = vi.mocked(fetch).mock.calls.at(-1);
     expect(lastCall).toBeDefined();
 
-    // eslint-disable-next-line @typescript-eslint/no-non-null-assertion
-    const [urlString, options] = lastCall!;
+    const [urlString, options] = lastCall as [string, RequestInit];
     expect(urlString).toBeTruthy();
     expect(options).toBeTruthy();
 
@@ -28,8 +33,9 @@ describe("getVideoUrl", () => {
   });
 
   it("returns the id if there was a result", async () => {
-    fetchMock.mockResponseOnce(
-      JSON.stringify({
+    vi.mocked(fetch).mockResolvedValueOnce({
+      ok: true,
+      json: async () => ({
         items: [
           {
             id: {
@@ -37,24 +43,25 @@ describe("getVideoUrl", () => {
             },
           },
         ],
-      })
-    );
+      }),
+    } as Response);
     const url = await getVideoUrl("Something");
     expect(url).toBe("https://www.youtube.com/embed/1234567");
   });
 
   it("returns null if there were no results", async () => {
-    fetchMock.mockResponseOnce(
-      JSON.stringify({
+    vi.mocked(fetch).mockResolvedValueOnce({
+      ok: true,
+      json: async () => ({
         items: [],
-      })
-    );
+      }),
+    } as Response);
     const url = await getVideoUrl("Something");
     expect(url).toBeNull();
   });
 
   it("returns null if there was an error", async () => {
-    fetchMock.mockRejectedValueOnce({});
+    vi.mocked(fetch).mockRejectedValueOnce(new Error("Fetch error"));
     const url = await getVideoUrl("Something");
     expect(url).toBeNull();
   });

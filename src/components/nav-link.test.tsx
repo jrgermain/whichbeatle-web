@@ -1,19 +1,15 @@
-/**
- * @jest-environment jsdom
- */
-
-import { Router, useRouter } from "next/router";
 import { render, screen } from "@testing-library/react";
+import { type Router, useRouter } from "next/router";
+import { describe, expect, it, vi } from "vitest";
 import NavLink from "./nav-link";
-import "@testing-library/jest-dom";
 
-jest.mock("next/router", () => ({
-  useRouter: jest.fn(),
+vi.mock("next/router", () => ({
+  useRouter: vi.fn(),
 }));
 
 describe("NavLink", () => {
   it("sets aria-current if path is an exact match", () => {
-    jest.mocked(useRouter).mockReturnValueOnce({
+    vi.mocked(useRouter).mockReturnValueOnce({
       route: "/test-nav-link",
       pathname: "/test-nav-link",
       query: {},
@@ -24,7 +20,7 @@ describe("NavLink", () => {
   });
 
   it("does not set aria-current if path is a non-exact match", () => {
-    jest.mocked(useRouter).mockReturnValueOnce({
+    vi.mocked(useRouter).mockReturnValueOnce({
       route: "/test-nav-link/child",
       pathname: "/test-nav-link/child",
       query: {},
@@ -35,7 +31,7 @@ describe("NavLink", () => {
   });
 
   it("does not set aria-current if path is not a match", () => {
-    jest.mocked(useRouter).mockReturnValueOnce({
+    vi.mocked(useRouter).mockReturnValueOnce({
       route: "/test-nav-link",
       pathname: "/test-nav-link",
       query: {},

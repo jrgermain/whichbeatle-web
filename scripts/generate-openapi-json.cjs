@@ -1,6 +1,5 @@
-/* eslint-disable @typescript-eslint/no-var-requires */
-const path = require("path");
-const fs = require("fs");
+const path = require("node:path");
+const fs = require("node:fs");
 const YAML = require("yaml");
 
 const yamlPath = path.join(__dirname, "../public/api/openapi.yaml");

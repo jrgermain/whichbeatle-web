@@ -1,12 +1,8 @@
-/**
- * @jest-environment jsdom
- */
-
 import { render, screen } from "@testing-library/react";
+import { describe, expect, it, vi } from "vitest";
 import GlobalHeader from "./global-header";
-import "@testing-library/jest-dom";
 
-jest.mock("next/router", () => ({
+vi.mock("next/router", () => ({
   useRouter() {
     return {
       route: "/",

@@ -1,10 +1,6 @@
-/**
- * @jest-environment jsdom
- */
-
 import { render, screen } from "@testing-library/react";
+import { describe, expect, it } from "vitest";
 import LoadingSpinner from "./loading-spinner";
-import "@testing-library/jest-dom";
 
 describe("LoadingSpinner", () => {
   it("renders with a title", () => {

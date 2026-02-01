@@ -1,3 +1,4 @@
+import { describe, expect, it } from "vitest";
 import { queryToArray } from "./query-string";
 
 describe("queryToArray", () => {

@@ -1,10 +1,6 @@
-/**
- * @jest-environment jsdom
- */
-
 import { render, screen } from "@testing-library/react";
+import { describe, expect, it } from "vitest";
 import SearchResult from "./search-result";
-import "@testing-library/jest-dom";
 
 describe("SearchResult", () => {
   it("renders an iframe if video is truthy", () => {
@@ -15,11 +11,11 @@ describe("SearchResult", () => {
         singer="McCartney"
         composer="McCartney"
         videoUrl="https://example.com/12345"
-      />
+      />,
     );
 
     expect(
-      document.querySelector('iframe[src="https://example.com/12345"]')
+      document.querySelector('iframe[src="https://example.com/12345"]'),
     ).toBeInTheDocument();
   });
   it("does not render an iframe if video is falsy", () => {
@@ -30,7 +26,7 @@ describe("SearchResult", () => {
         singer="McCartney"
         composer="McCartney"
         videoUrl={undefined}
-      />
+      />,
     );
 
     expect(document?.querySelector("iframe")).not.toBeInTheDocument();
@@ -43,7 +39,7 @@ describe("SearchResult", () => {
         singer="McCartney"
         composer="McCartney"
         videoUrl="https://example.com/12345"
-      />
+      />,
     );
 
     expect(screen.getByTestId("album-name")).toHaveTextContent("Abbey Road");
@@ -56,7 +52,7 @@ describe("SearchResult", () => {
         singer="McCartney"
         composer="McCartney"
         videoUrl="https://example.com/12345"
-      />
+      />,
     );
 
     expect(screen.getByTestId("singer-name")).toHaveTextContent("McCartney");
@@ -69,7 +65,7 @@ describe("SearchResult", () => {
         singer="McCartney"
         composer="McCartney"
         videoUrl="https://example.com/12345"
-      />
+      />,
     );
 
     expect(screen.getByTestId("composer-name")).toHaveTextContent("McCartney");
@@ -82,11 +78,11 @@ describe("SearchResult", () => {
         singer="McCartney"
         composer="McCartney"
         videoUrl="https://example.com/12345"
-      />
+      />,
     );
 
     expect(screen.getByTestId("song-title")).toHaveTextContent(
-      "You Never Give Me Your Money"
+      "You Never Give Me Your Money",
     );
   });
 });

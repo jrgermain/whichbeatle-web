@@ -1,6 +1,6 @@
-import { Entries } from "type-fest";
+import type { Entries } from "type-fest";
 import discography from "../data/discography.json";
-import Song from "../types/song";
+import type Song from "../types/song";
 
 /**
  * Before we compare a result and a query, we "normalize" both sides to allow
@@ -41,7 +41,7 @@ function isMatch(query: string, song: Song, field: keyof Song) {
   ).map(normalize);
 
   return normalizedValues.some((normalizedValue) =>
-    normalizedValue.includes(normalizedQuery)
+    normalizedValue.includes(normalizedQuery),
   );
 }
 
@@ -68,8 +68,8 @@ export function findAll(queries: FindAllInput): Song[] {
     filters.every(
       ([field, values]) =>
         !values?.length || // Filter was not provided or has no value, so don't filter by that field
-        values.some((value) => value && isMatch(value, song, field))
-    )
+        values.some((value) => value && isMatch(value, song, field)),
+    ),
   );
 }
 
